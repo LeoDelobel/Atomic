@@ -21,7 +21,7 @@
       </div>
       <form action="search.php" type="get">
         <input type="text" id="search_bar" name="q" />
-        <input type="submit" id="search_button" src="ressources/profile" value="Rechercher"/>
+        <input type="submit" id="search_button" src="ressources/profile" value="Rechercher"/> <!--Hello-->
       </form>
 
         <div class="row grey_area">
