@@ -14,6 +14,8 @@
   }
 
   class UserManager{
+
+    # Connexion et retour du succès de la fonction (true, false)
     static function Connexion($name, $pass){
       require_once("init_sql.php");
       $statement = $DATABASE->prepare("SELECT * FROM utilisateur WHERE pseudonyme = ?");
@@ -43,6 +45,16 @@
         # Le compte n'existe pas
         return false;
       }
+    }
+
+    static function Inscription($name, $pass, $mail){
+      require_once("init_sql.php");
+
+      # L'ID role est 1 par défaut (Rang utilisateur)
+      $statement = $DATABASE->prepare("INSERT INTO utilisateur(id_role, pseudonyme, pass, mail) VALUES (1, ?, ?, ?)");
+
+      # On met le execute dans un return car il donne un true ou false
+      return($statement->execute(array($name, md5($pass), $mail)));
     }
   }
  ?>
