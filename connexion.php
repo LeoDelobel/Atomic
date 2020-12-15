@@ -16,13 +16,13 @@
       {
         if(isset($_POST['pwd'])) #Check si password est rempli + requête sql
       {
-      $statement = $DATABASE ->prepare("SELECT * FROM utilisateur Where pseudonyme = ?"); #requête sql pour avoir tout les pseudo ...
-      $statement->execute(array($_POST['pseudo'])); # ... égal à celui rentré dans l'input
-      $liste_usermdp = $statement->fetchAll(); # entrée des résultat dans la liste
-
-        if (md5($_POST['pwd']) === $liste_usermdp[0]["pass"]) # hash + test correspondance
-        {
-          echo "ca morch"; # connexion réussi
+        # On utilise UserManager
+        # La fonction renvoie true si l'utilisateur est connecté
+        if(UserManager::Connexion($_POST['pseudo'], $_POST['pwd'])){
+          # Si la fonction renvoie true
+        } else {
+          # Afficher le message d'Erreur
+          echo 'March po';
         }
       } # erreur empty
     }  # erreur empty
