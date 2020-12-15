@@ -32,9 +32,9 @@
             if($_SESSION['auth']){
               echo $_SESSION['user']->pseudonyme;
             } else {
-              echo '<a href="connexion.php">'
-              echo 'Se connecter'
-              echo '</a>'
+              echo '<a href="connexion.php">';
+              echo 'Se connecter';
+              echo '</a>';
             }
           ?></p>
         </div>
