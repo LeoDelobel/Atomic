@@ -27,7 +27,15 @@
         <div class="row grey_area">
           <img src="img/profile.jpeg" id="profile_picture" />
           <p id="account_name_area"><?php
-          echo $_SESSION["auth"];
+
+          # Si l'utilisateur est connecté, $_SESSION["auth"] est true
+            if($_SESSION['auth']){
+              echo $_SESSION['user']->pseudonyme;
+            } else {
+              echo '<a href="connexion.php">'
+              echo 'Se connecter'
+              echo '</a>'
+            }
           ?></p>
         </div>
 
