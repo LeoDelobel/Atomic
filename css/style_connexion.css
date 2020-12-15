@@ -1,0 +1,30 @@
+.page_connexion
+{
+  background-color: #202020;
+  color:white;
+  text-align: center;
+}
+.connexion_area
+{
+  background-color: rgb(50,50,50);
+  border-bottom-right-radius : 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 5px 5px 5px rgb(70,150,20);
+}
+
+.inscription_area
+{
+  background-color: rgb(50,50,50);
+  border-bottom-right-radius : 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 5px 5px 5px rgb(70,150,20);
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.rangement
+{
+  padding:20px;
+  margin: 20px;
+}

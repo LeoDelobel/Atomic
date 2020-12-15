@@ -1,0 +1,79 @@
+.miniature{
+  display: inline-block;
+
+  margin: 25px;
+  width: 320px;
+  height: 180px;
+  border-radius: 35px 35px 35px 5px;
+
+  background-color: rgb(60, 60, 60);
+}
+
+.miniature .miniature_meta{
+  color:white;
+  display: block;
+
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  width: 280px;
+  height: 180px;
+
+  z-index: 1;
+  transition: transform .2s;
+}
+
+.miniature .miniature_meta:hover{
+  transform: scale(1.05);
+}
+
+.miniature img{
+  border-radius: 35px 35px 35px 5px;
+
+  width: 320px;
+  height: 180px;
+  position:absolute;
+  opacity: 0.2;
+}
+
+.miniature .miniature_meta .miniature_titre{
+  position: absolute;
+
+  top: 10px;
+  left: 10px;
+}
+
+.miniature .miniature_meta .miniature_vues{
+  position: absolute;
+
+  bottom: 10px;
+  left: 10px;
+}
+
+.miniature .miniature_meta .miniature_auteur{
+  position: absolute;
+
+  bottom: 10px;
+  right: 50px;
+}
+
+h2{
+  text-indent: 15%;
+}
+
+.liste_videos{
+  margin-top: 30px;
+  height: 200px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scrollbar-width: thin;
+
+  white-space: nowrap;
+}

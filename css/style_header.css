@@ -1,0 +1,77 @@
+/*Header*/
+.header
+{
+  background-color: red;
+  padding-bottom:5px;
+  height: 120px;
+  color: white;
+  font-size: 40px;
+  box-shadow: 0px 5px 5px rgb(70,150,20);
+  margin-bottom: 5px;
+}
+.allelements
+{
+  background-color:#404040;
+  height: 120px
+}
+#lgAV
+{
+  position: absolute;
+  top: 10px;
+  left:50px;
+  width: 75px;
+  background-color:#404040;
+}
+#titleAV
+{
+  color:white;
+  margin-top: 25px;
+  width: 350px;
+}
+#profile_picture
+{
+  position: relative;
+  top: 5px;
+  left:10px;
+  height:70px;
+  margin-right:10px;
+
+}
+
+#search_bar
+{
+  margin-top: 30px;
+  height: 60px;
+  width: 900px;
+  background-color:#303030;
+}
+#search_button
+{
+  background-image: ("ressources/search_icon.jpg");
+  margin-top:30px;
+  height: 60px;
+  width: 60px;
+  margin-left: 10px;
+  left:50px;
+
+}
+#account_name_area
+{
+  position: relative;
+  margin-left: 10px;
+  left: 5px;
+  top: 10px;
+}
+.grey_area
+{
+  /*Style*/
+  background-color: rgb(80,80,80);
+  border-bottom-right-radius : 30px;
+  height: 80px;
+  padding-right:20px;
+  width: auto;
+  /*Position*/
+  position: relative;
+  right: 0px;
+  margin-top: 20px;
+}
