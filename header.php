@@ -26,7 +26,9 @@
 
         <div class="row grey_area">
           <img src="img/profile.jpeg" id="profile_picture" />
-          <p id="account_name_area"><?php echo $_SESSION["auth"]; ?></p>
+          <p id="account_name_area"><?php
+          echo $_SESSION["auth"];
+          ?></p>
         </div>
 
       </div>
