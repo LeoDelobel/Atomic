@@ -21,12 +21,12 @@
       </div>
       <form action="search.php" type="get">
         <input type="text" id="search_bar" name="q" />
-        <input type="submit" id="search_button" src="ressources/profile" value="Rechercher"/> <!--Hello-->
+        <input type="submit" id="search_button" src="ressources/profile" value="Rechercher"/>
       </form>
 
         <div class="row grey_area">
           <img src="img/profile.jpeg" id="profile_picture" />
-          <p id="account_name_area">Pseudo</p>
+          <p id="account_name_area"><?php echo $_SESSION["auth"]; ?></p>
         </div>
 
       </div>
