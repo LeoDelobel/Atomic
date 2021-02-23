@@ -58,5 +58,28 @@
       # On met le execute dans un return car il donne un true ou false
       return($statement->execute(array($name, md5($pass), $mail)));
     }
+
+    static function FindUser($id_utilisateur){
+      session_start();
+      require("init_sql.php");
+      $statement = $DATABASE->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = ?");
+      $statement->execute(array($id_utilisateur));
+      $compte = $statement->fetchAll()[0];
+      print_r($compte);
+
+      if(isset($compte)){
+        # Le compte existe (L'id est valide)
+
+        # On rend un objet utilisateur avec toutes ses données
+          return new User(
+            $compte["id_utilisateur"],
+            $compte["id_role"],
+            $compte["pseudonyme"],
+            $compte["mail"]);
+      } else {
+        # Le compte n'existe pas
+        return false;
+      }
+    }
   }
  ?>
