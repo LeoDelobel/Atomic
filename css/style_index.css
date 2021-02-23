@@ -1,3 +1,12 @@
+body{
+  background-color: rgb(38,38,38);
+  margin: 0px;
+  padding: 0px;
+  color: white;
+}
+
+
+
 .miniature{
   display: inline-block;
 
