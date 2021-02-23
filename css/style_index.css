@@ -6,7 +6,7 @@ body{
 }
 
 
-
+/*
 .miniature{
   display: inline-block;
 
@@ -16,7 +16,7 @@ body{
   border-radius: 35px 35px 35px 5px;
 
   background-color: rgb(60, 60, 60);
-}
+}*/
 
 .miniature .miniature_meta{
   color:white;
