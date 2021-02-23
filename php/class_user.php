@@ -32,12 +32,8 @@
           # On remplit le $_SESSION avec un objet utilisateur
 
           $_SESSION["auth"] = true;
-          $_SESSION["user"] = new User(
-            $compte["id_utilisateur"],
-            $compte["id_role"],
-            $compte["pseudonyme"],
-            $compte["mail"]);
-
+          $_SESSION["pseudonyme"] = $compte["pseudonyme"];
+          
           # On retourne true (Donc tout s'est bien passé)
           return true;
         } else {

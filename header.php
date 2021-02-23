@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <div class="container-fluid header"> <!-- header entier class=header -->
-    <div class="row allelements"><!-- Tout les éléments (allelements) -->
+    <div class="row allelements"> <!-- Tout les éléments (allelements) -->
 
       <div class="col-sm-1" id="lgAV_area">
         <img src="img/logo.png" id="lgAV"/>
@@ -31,9 +31,9 @@
           # Si l'utilisateur est connecté, $_SESSION["auth"] est true
           session_start();
           require_once("php/class_user.php");
+          var_dump($buffer);
             if($_SESSION['auth']){
               $buffer = unserialize($_SESSION['user']);
-              var_dump($buffer);
               echo 'Bonjour ' . $buffer->pseudonyme;
             } else {
               echo '<a href="connexion.php">';
