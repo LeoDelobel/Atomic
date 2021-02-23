@@ -74,7 +74,7 @@
           return new User(
             $compte["id_utilisateur"],
             $compte["id_role"],
-            $compte[2],
+            $compte["pseudonyme"],
             $compte["mail"]);
       } else {
         # Le compte n'existe pas
