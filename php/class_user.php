@@ -5,16 +5,12 @@
     public $pseudonyme;
     public $mail;
 
-    function __construct(){
-    }
-
-    /*
     function __construct($id_utilisateur, $id_role, $pseudonyme, $mail){
       $this->id_utilisateur = $id_utilisateur;
       $this->$id_role = $id_role;
       $this->$pseudonyme = $pseudonyme;
       $this->$mail = $mail;
-    }*/
+    }
   }
 
   class UserManager{
@@ -34,11 +30,11 @@
           # On remplit le $_SESSION avec un objet utilisateur
 
           $_SESSION["auth"] = true;
-          $_SESSION["user"] = new User();
-          $_SESSION["user"]->pseudonyme = $compte["id_utilisateur"];
-          $_SESSION["user"]->pseudonyme = $compte["id_role"];
-          $_SESSION["user"]->pseudonyme = $compte["pseudonyme"];
-          $_SESSION["user"]->pseudonyme = $compte["mail"];
+          $_SESSION["user"] = new User(
+            $compte["id_utilisateur"],
+            $compte["id_role"],
+            $compte["pseudonyme"],
+            $compte["mail"]);
 
           # On retourne true (Donc tout s'est bien passé)
           return true;
