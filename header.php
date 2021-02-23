@@ -30,7 +30,7 @@
 
           # Si l'utilisateur est connecté, $_SESSION["auth"] est true
           session_start();
-          var_dump($_SESSION['user']);
+          require_once("php/class_user.php");
             if($_SESSION['auth']){
               echo 'Bonjour ' . $_SESSION['user']->pseudonyme;
             } else {
