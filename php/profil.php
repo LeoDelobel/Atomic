@@ -4,6 +4,8 @@
     require_once("class_user.php");
 
     $utilisateur = UserManager::FindUser($id_utilisateur);
+
+    print_r($utilisateur);
     ?>
 
     <span class="profil">
