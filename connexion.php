@@ -16,7 +16,6 @@
       {
         if(isset($_POST['pwd'])) #Check si password est rempli + requête sql
       {
-        print_r($_POST);
         # On utilise UserManager
         # La fonction renvoie true si l'utilisateur est connecté
         if(UserManager::Connexion($_POST['pseudo'], $_POST['pwd'])){
