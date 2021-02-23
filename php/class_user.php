@@ -23,6 +23,8 @@
       $statement->execute(array($name));
       $compte = $statement->fetchAll()[0];
 
+      var_dump($compte["pseudonyme"]);
+
       if(isset($compte)){
         # Le compte existe (Les noms correspondent)
         if($compte["pass"] == md5($pass)){
