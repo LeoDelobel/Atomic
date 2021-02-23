@@ -22,7 +22,6 @@
       <div class="search_video">
         <?php
           printMiniature($video['id_video']);
-          echo $video['titre'];
           printProfil($video['id_utilisateur']);
         ?>
 
