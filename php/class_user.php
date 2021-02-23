@@ -22,8 +22,6 @@
       $statement->execute(array($name));
       $compte = $statement->fetchAll()[0];
 
-      print_r($compte);
-
       if(isset($compte)){
         # Le compte existe (Les noms correspondent)
         if($compte["pass"] == md5($pass)){
