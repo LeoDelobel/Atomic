@@ -30,8 +30,9 @@
 
           # Si l'utilisateur est connecté, $_SESSION["auth"] est true
           session_start();
+          var_dump($_SESSION['user']);
             if($_SESSION['auth']){
-              echo 'Bonjour '.$_SESSION['user']->pseudonyme;
+              echo 'Bonjour ' . $_SESSION['user']->pseudonyme;
             } else {
               echo '<a href="connexion.php">';
               echo 'Se connecter';
