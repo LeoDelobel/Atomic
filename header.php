@@ -33,6 +33,7 @@
           require_once("php/class_user.php");
             if($_SESSION['auth']){
               $buffer = unserialize($_SESSION['user']);
+              var_dump($buffer);
               echo 'Bonjour ' . $buffer->pseudonyme;
             } else {
               echo '<a href="connexion.php">';
