@@ -1,7 +1,7 @@
 <?php
   function PrintProfil($id_utilisateur){
     include("init_sql.php");
-    include("class_user.php");
+    require_once("class_user.php");
 
     $utilisateur = UserManager::FindUser($id_utilisateur);
     ?>
