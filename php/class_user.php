@@ -11,6 +11,10 @@
       $this->$pseudonyme = $pseudonyme;
       $this->$mail = $mail;
     }
+
+    public function getNom(){
+            return $this->pseudonyme;
+        }
   }
 
   class UserManager{
