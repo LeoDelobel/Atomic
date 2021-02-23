@@ -30,9 +30,15 @@
    <div class="video-meta">
      <p>
        <?php
-       echo $video["nombre_vues"] . ' vues  •  ';
+       require("php/vues.php");
+       echo GetVues($id_video) . ' vues  •  ';
        echo $video["date_publication"] . '  •  👍';
-       echo $video["nombre_likes"];?></p>
+       echo $video["nombre_likes"];
+       if(AddVue($id_video, $_SESSION["id_utilisateur"])){
+         echo "Vue ajoutée";
+       }
+       ?></p>
+
      <hr>
      <p>Posté par <?php echo $auteur["pseudonyme"];?></p>
      <hr>

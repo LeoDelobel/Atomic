@@ -14,6 +14,7 @@
 
       $auteur = $statement->fetchAll()[0];
 
+      require_once("vues.php");
       ?>
 
       <a href="watch.php?id_video=  <?php echo $video['id_video'] ?>">
@@ -21,7 +22,7 @@
           <img class="miniature_img" src="res/miniatures/<?php echo $video["id_video"] ?>.jpg">
           <div class="miniature_meta">
             <p class="miniature_titre"> <?php echo $video["titre"] ?></p>
-            <p class="miniature_vues"> <?php echo $video["nombre_vues"] ?> vues</p>
+            <p class="miniature_vues"> <?php echo GetVues($id_video) ?> vues</p>
             <p class="miniature_auteur"> <?php echo $auteur["pseudonyme"] ?></p>
           </div>
         </span>

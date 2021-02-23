@@ -17,7 +17,7 @@
       </div>
 
       <div class="col-sm-auto" id="titleAV  ">
-        <p><a href="http://176.166.235.56/index.php">Atomic Vidéo</a></p>
+        <p><a href="index.php">Atomic Vidéo</a></p>
       </div>
       <form action="search.php" type="get">
         <input type="text" id="search_bar" name="q" />
