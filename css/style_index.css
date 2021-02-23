@@ -68,12 +68,11 @@ h2{
 
 .liste_videos{
   margin-top: 30px;
-  height: 200px;
+  height: 220px;
+  margin: 10px 0px 10px 0px;
 
   overflow-x: auto;
   overflow-y: hidden;
-
-  scrollbar-width: thin;
 
   white-space: nowrap;
 }
