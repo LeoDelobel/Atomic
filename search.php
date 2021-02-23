@@ -15,12 +15,15 @@
 
     $liste_videos = $statement->fetchAll();
     include("php/miniature.php");
+    include("php/profil.php");
 
     foreach($liste_videos as $video){
       ?>
       <div class="search_video">
         <?php
           printMiniature($video['id_video']);
+          echo $video['titre'];
+          printProfil($video['id_utilisateur']);
         ?>
 
       </div>
