@@ -32,7 +32,7 @@
           session_start();
           require_once("php/class_user.php");
           $test = new User("1", "1", "TEST", "mail");
-
+          var_dump($test);
             if($_SESSION['auth']){
               echo 'Bonjour ' . $test->pseudonyme;
             } else {
