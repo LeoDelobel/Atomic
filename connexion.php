@@ -19,7 +19,7 @@
         # On utilise UserManager
         # La fonction renvoie true si l'utilisateur est connecté
         if(UserManager::Connexion($_POST['pseudo'], $_POST['pwd'])){
-          echo 'Bonjour ' + $_POST['pseudo'];
+          echo 'Bonjour '.$_POST['pseudo'];
 
           # Si la fonction renvoie true
         } else {
