@@ -18,6 +18,7 @@
       {
         # On utilise UserManager
         # La fonction renvoie true si l'utilisateur est connecté
+        require_once("php/class_user.php");
         if(UserManager::Connexion($_POST['pseudo'], $_POST['pwd'])){
           echo 'March';
 
