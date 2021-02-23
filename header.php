@@ -32,7 +32,8 @@
           session_start();
           require_once("php/class_user.php");
             if($_SESSION['auth']){
-              echo 'Bonjour ' . $_SESSION['user']->pseudonyme;
+              $buffer = unserialize($_SESSION['user']);
+              echo 'Bonjour ' . $buffer->pseudonyme;
             } else {
               echo '<a href="connexion.php">';
               echo 'Se connecter';
