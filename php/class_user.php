@@ -65,6 +65,7 @@
       $statement = $DATABASE->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = ?");
       $statement->execute(array($id_utilisateur));
       $compte = $statement->fetchAll()[0];
+      print_r($compte);
 
       if(isset($compte)){
         # Le compte existe (L'id est valide)
