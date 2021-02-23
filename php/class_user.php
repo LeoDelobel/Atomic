@@ -17,6 +17,7 @@
 
     # Connexion et retour du succès de la fonction (true, false)
     static function Connexion($name, $pass){
+      session_start();
       require("init_sql.php");
       $statement = $DATABASE->prepare("SELECT * FROM utilisateur WHERE pseudonyme = ?");
       $statement->execute(array($name));
@@ -48,6 +49,7 @@
     }
 
     static function Inscription($name, $pass, $mail){
+      session_start();
       require_once("init_sql.php");
 
       # L'ID role est 1 par défaut (Rang utilisateur)

@@ -29,6 +29,7 @@
           <p id="account_name_area"><?php
 
           # Si l'utilisateur est connecté, $_SESSION["auth"] est true
+          session_start();
             if($_SESSION['auth']){
               echo $_SESSION['user']->pseudonyme;
             } else {
