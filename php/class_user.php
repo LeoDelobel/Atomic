@@ -7,14 +7,10 @@
 
     function __construct($id_utilisateur, $id_role, $pseudonyme, $mail){
       $this->id_utilisateur = $id_utilisateur;
-      $this->$id_role = $id_role;
-      $this->$pseudonyme = $pseudonyme;
-      $this->$mail = $mail;
+      $this->id_role = $id_role;
+      $this->pseudonyme = $pseudonyme;
+      $this->mail = $mail;
     }
-
-    public function getNom(){
-            return $this->pseudonyme;
-        }
   }
 
   class UserManager{
