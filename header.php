@@ -31,7 +31,7 @@
           # Si l'utilisateur est connecté, $_SESSION["auth"] est true
           session_start();
             if($_SESSION['auth']){
-              echo $_SESSION['user']->pseudonyme;
+              echo 'Bonjour '.$_POST['pseudo'];
             } else {
               echo '<a href="connexion.php">';
               echo 'Se connecter';
