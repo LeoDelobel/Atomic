@@ -1,10 +1,9 @@
 <?php
   function PrintProfil($id_utilisateur){
     include("init_sql.php");
-    $statement = $DATABASE->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = ?");
-    $statement->execute(array($id_utilisateur));
+    include("class_user.php");
 
-    $utilisateur = $statement->fetchAll()[0];
+    $utilisateur = UserManager::FindUser($id_utilisateur);
     ?>
 
     <span class="profil">
