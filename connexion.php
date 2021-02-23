@@ -18,9 +18,8 @@
       {
         # On utilise UserManager
         # La fonction renvoie true si l'utilisateur est connecté
-        require("php/class_user.php");
         if(UserManager::Connexion($_POST['pseudo'], $_POST['pwd'])){
-          echo 'March';
+          echo 'Bonjour ' + $_POST['pseudo'];
 
           # Si la fonction renvoie true
         } else {
