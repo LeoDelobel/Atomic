@@ -23,8 +23,6 @@
       $statement->execute(array($name));
       $compte = $statement->fetchAll()[0];
 
-      var_dump($compte["pseudonyme"]);
-
       if(isset($compte)){
         # Le compte existe (Les noms correspondent)
         if($compte["pass"] == md5($pass)){
@@ -33,7 +31,7 @@
 
           $_SESSION["auth"] = true;
           $_SESSION["pseudonyme"] = $compte["pseudonyme"];
-          
+
           # On retourne true (Donc tout s'est bien passé)
           return true;
         } else {

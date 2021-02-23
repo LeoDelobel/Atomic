@@ -31,10 +31,8 @@
           # Si l'utilisateur est connecté, $_SESSION["auth"] est true
           session_start();
           require_once("php/class_user.php");
-          var_dump($buffer);
             if($_SESSION['auth']){
-              $buffer = unserialize($_SESSION['user']);
-              echo 'Bonjour ' . $buffer->pseudonyme;
+              echo 'Bonjour ' . $_SESSION["pseudonyme"];
             } else {
               echo '<a href="connexion.php">';
               echo 'Se connecter';
