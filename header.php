@@ -16,7 +16,7 @@
         <img src="img/logo.png" id="lgAV"/>
       </div>
 
-      <div class="col-sm-auto" id="titleAV">
+      <div class="col-sm-auto" id="titleAV  ">
         <p><a href="http://176.166.235.56/index.php">Atomic Vidéo</a></p>
       </div>
       <form action="search.php" type="get">
@@ -30,11 +30,8 @@
 
           # Si l'utilisateur est connecté, $_SESSION["auth"] est true
           session_start();
-          require_once("php/class_user.php");
-          $test = new User("1", "1", "TEST", "mail");
-          var_dump($test->pseudonyme);
             if($_SESSION['auth']){
-              echo 'Bonjour ' . $test->pseudonyme;
+              echo 'Bonjour ' . $_SESSION['user']->pseudonyme;
             } else {
               echo '<a href="connexion.php">';
               echo 'Se connecter';
