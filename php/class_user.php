@@ -17,7 +17,7 @@
 
     # Connexion et retour du succès de la fonction (true, false)
     static function Connexion($name, $pass){
-      require_once("init_sql.php");
+      require("init_sql.php");
       $statement = $DATABASE->prepare("SELECT * FROM utilisateur WHERE pseudonyme = ?");
       $statement->execute(array($name));
       $compte = $statement->fetchAll()[0];
