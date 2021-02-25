@@ -11,13 +11,10 @@
 
   </head>
   <body>
-  <!-- On inclut le header -->
-  <?php
-    require 'header.php';
-  ?>
-  <!-- -->
-  <hr style="border: 2px solid grey; width: 75%">
-  <h2>Vidéos du jour</h2>
+    <!-- On inclut le header -->
+    <?php require 'header.php';?>
+    <!-- -->
+    <h2>Vidéos du jour</h2>
   <?php
     require 'php/liste_videos.php';
    ?>
