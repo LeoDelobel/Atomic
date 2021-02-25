@@ -12,9 +12,6 @@ body{
   margin: 25px;
   width: 320px;
   height: 180px;
-  border-radius: 35px 35px 35px 5px;
-
-  background-color: rgb(60, 60, 60);
 }
 
 .miniature .miniature_meta{
@@ -36,10 +33,10 @@ body{
   transition: transform .2s;
 }
 
-.miniature .miniature_meta:hover{
+/*.miniature .miniature_meta:hover{
   transform: scale(1.05);
 }
-
+*/
 .miniature img{
   color:white;
   display: block;
