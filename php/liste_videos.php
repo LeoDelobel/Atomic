@@ -3,7 +3,7 @@
     require 'php/init_sql.php';
     $statement = $DATABASE->prepare("SELECT id_video FROM video");
     $statement->execute();
-
+    #Hello
     $liste_id = $statement->fetchAll();
 
       # On commence la liste des vidéos
