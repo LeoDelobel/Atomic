@@ -18,15 +18,12 @@
       ?>
 
       <a href="watch.php?id_video=  <?php echo $video['id_video'] ?>">
-        <span class="miniature">
-          <!-- <img class="miniature_img" src="res/miniatures/<?php# echo $video["id_video"] ?>.jpg"> -->
           <div class="miniature_meta">
             <img class="miniature_img" src="res/miniatures/<?php echo $video["id_video"] ?>.jpg">
             <p class="miniature_titre"> <?php echo $video["titre"] ?></p>
             <p class="miniature_vues"> <?php echo GetVues($id_video) ?> vues</p>
             <p class="miniature_auteur"> <?php echo $auteur["pseudonyme"] ?></p>
           </div>
-        </span>
       </a>
 
       <?php
