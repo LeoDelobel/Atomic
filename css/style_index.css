@@ -41,6 +41,17 @@ body{
 }
 
 .miniature img{
+  color:white;
+  display: block;
+
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   border-radius: 35px 35px 35px 5px;
 
   width: 320px;
