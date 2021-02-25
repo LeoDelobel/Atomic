@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style_index.css"/>
 
   </head>
+  <body>
   <!-- On inclut le header -->
   <?php
     require 'header.php';
@@ -20,4 +21,5 @@
   <?php
     require 'php/liste_videos.php';
    ?>
+ </body>
 </html>
