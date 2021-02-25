@@ -31,7 +31,7 @@
      <p>
        <?php
        require("php/vues.php");
-       echo GetVues($id_video) . ' vues  •  ';
+       echo GetVues($video["id_video"]) . ' vues  •  ';
        echo $video["date_publication"] . '  •  👍';
        echo $video["nombre_likes"];
        if($_SESSION["auth"]){
