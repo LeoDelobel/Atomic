@@ -10,9 +10,15 @@
 
   function AddVue($id_video, $id_utilisateur){
     require("init_sql.php");
-    $statement = $DATABASE->prepare("INSERT INTO visionner(id_utilisateur, id_video, date_visionnage) VALUES (?, ?, NOW())");
+    $statement = $DATABASE->prepare("INSERT INTO visionner(id_utilisateur, id_video) VALUES (?, ?)");
     $statement->execute(array($id_utilisateur, $id_video));
 
-    return true;
+    if(!$statement){
+      // Si la commande SQL a reçu une erreur
+      return false;
+    } else {
+      // Sinon tout va bien
+      return true;
+    }
   }
  ?>

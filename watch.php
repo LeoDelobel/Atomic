@@ -34,8 +34,14 @@
        echo GetVues($id_video) . ' vues  •  ';
        echo $video["date_publication"] . '  •  👍';
        echo $video["nombre_likes"];
-       if(AddVue($id_video, $_SESSION["id_utilisateur"])){
-         echo "Vue ajoutée";
+       if($_SESSION["auth"]){
+         // Si l'utilisateur est connecté, il a un id utilisateur à ajouter
+         if(AddVue($video["id_video"], $_SESSION["id_utilisateur"])){
+         }
+       } else {
+         // Sinon utiliser l'user Anonymous (id : 0)
+         if(AddVue($video["id_video"], 0)){
+         }
        }
        ?></p>
 
