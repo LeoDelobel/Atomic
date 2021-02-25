@@ -7,7 +7,8 @@
     $liste_id = $statement->fetchAll();
 
       # On commence la liste des vidéos
-    echo '<ul">';
+    echo '<div class="liste_videos">';
+    echo '<ul>';
     foreach($liste_id as $id){
       echo '<li style="display:inline-block">';
         require_once('miniature.php');
@@ -17,5 +18,5 @@
     echo "</ul>";
       # La liste est finie
 
-    echo '</div class="liste_videos">';
+    echo '</div>';
  ?>
