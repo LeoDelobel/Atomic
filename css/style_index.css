@@ -15,7 +15,7 @@ body{
 }
 
 .miniature .miniature_meta{
-  color:white;
+  color:black;
   display: block;
 
   position: relative;
@@ -39,7 +39,7 @@ body{
 */
 
 .miniature img{
-  color:grey;
+  color:black;
   display: block;
 
   position: relative;
