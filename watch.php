@@ -5,6 +5,7 @@
 # URL         : http://176.166.235.56/watch.php
   include("header.php");
   include("php/init_sql.php");
+  include_once("php/like.php");
  ?>
 <link rel="stylesheet" href="css/style_search.css"/>
  <div class="video-container">
@@ -20,6 +21,14 @@
       $statement->execute(array($video["id_utilisateur"]));
 
       $auteur = $statement->fetchAll()[0];
+      ?>
+
+      <?php
+      if(isset($_POST["like"]))
+        {
+          AddLike($_SESSION["id_utilisateur"],$video["id_video"]);
+        }
+
       ?>
 
       <video controls>
@@ -51,7 +60,9 @@
      <h4>Description</h4>
      <?php if($_SESSION["auth"])
      {
-       echo '<button class="like">J\'aime</button>';
+       echo'<form method="post" action="" >
+              <input type="submit" name="like" value="J\'aime">
+            </form>';
      }
      ?>
      <?php require_once("php/profil.php");
