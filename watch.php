@@ -40,9 +40,10 @@
      <p>
        <?php
        require("php/vues.php");
+       require_once("php/like.php");
        echo GetVues($video["id_video"]) . ' vues  •  ';
        echo $video["date_publication"] . '  •  👍';
-       echo $video["nombre_likes"];
+       echo GetLikes($video["id_video"]);
        if($_SESSION["auth"]){
          // Si l'utilisateur est connecté, il a un id utilisateur à ajouter
          if(AddVue($video["id_video"], $_SESSION["id_utilisateur"])){
