@@ -49,6 +49,12 @@
      <p>Posté par <?php echo $auteur["pseudonyme"];?></p>
      <hr>
      <h4>Description</h4>
+     <?php if($_SESSION["auth"])
+     {
+       echo '<button class="like">J\'aime</button>';
+     }
+     ?>
+
      <p><?php echo $video["description"];?></p>
    </div>
 
