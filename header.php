@@ -33,7 +33,10 @@
           require_once("php/class_user.php");
             if($_SESSION['auth']){
               echo 'Bonjour ' . $_SESSION["pseudonyme"];
-              echo '<button class="btn_logout">Déconnexion</button>';
+              echo'<form action="php/disconnect.php" method="POST">
+                    <button class="btn_logout">Déconnexion</button>
+              </form>';
+
             } else {
               echo '<a href="connexion.php">';
               echo 'Se connecter';
