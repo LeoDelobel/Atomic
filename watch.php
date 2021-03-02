@@ -6,7 +6,7 @@
   include("header.php");
   include("php/init_sql.php");
  ?>
-
+<link rel="stylesheet" href="css/style_search.css"/>
  <div class="video-container">
    <div class="video">
      <?php
@@ -54,10 +54,14 @@
        echo '<button class="like">J\'aime</button>';
      }
      ?>
+     <?php require_once("php/profil.php");
+       PrintProfil(2);
 
+     ?>
      <p><?php echo $video["description"];?></p>
    </div>
 
    <div class="commentaires">
    </div>
+
  </div>
