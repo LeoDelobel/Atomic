@@ -12,7 +12,9 @@
       <div class="profil_meta">
         <p class="profil_nom"> <?php echo $utilisateur->pseudonyme ?></p>
         <p class="profil_abonnes"> <?php echo GetAbonnes($id_utilisateur) ?> abonnés</p>
-        <button class="abonnement"> S'abonner </p>
+        <a href="php/validation.php?id_master=<?php echo $utilisateur->id_utilisateur?>">
+          <input type="submit" name="abonnement" value="S'abonner">
+        </form>
       </div>
     </span>
 
