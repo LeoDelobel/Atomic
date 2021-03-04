@@ -1,5 +1,11 @@
 <?php
-  
+  function RemoveAbonnement($id_master, $id_slave){
+    require("init_sql.php"); // On initialise la base de données
+    $statement = $DATABASE->prepare("DELETE FROM abonner WHERE id_master = ? AND id_slave = ?"); // Commande SQL
+    $statement->execute(array($id_master, $id_slave));
+
+    return $statement; // On retourne vrai ou faux selon le succès de la commande
+  }
 
   function GetAbonnes($id_utilisateur){
     require("init_sql.php");
