@@ -28,8 +28,7 @@ function CheckLike($id_utilisateur, $id_video){
   $statement = $DATABASE->prepare("SELECT COUNT(id_video) AS nombre FROM liker WHERE id_utilisateur = ? AND id_video = ?"); // Commande SQL
   $statement->execute(array($id_utilisateur, $id_video));
   $like = $statement->fetchAll()[0];
-
-  return ($like > 0); // On retourne vrai si l'utilisateur a un ou plusieurs likes enregistrées sur cette vidéo
+  return ($like[0] > 0); // On retourne vrai si l'utilisateur a un ou plusieurs likes enregistrées sur cette vidéo
 }
 
 function GetLikes($id_video){

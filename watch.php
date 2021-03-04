@@ -28,6 +28,10 @@
         {
           AddLike($_SESSION["id_utilisateur"],$video["id_video"]);
         }
+      if(isset($_POST["unlike"]))
+      {
+        RemoveLike($_SESSION["id_utilisateur"],$video["id_video"]);
+      }
 
       ?>
 
@@ -61,9 +65,22 @@
      <h4>Description</h4>
      <?php if($_SESSION["auth"])
      {
-       echo'<form method="post" action="" >
-              <input type="submit" name="like" value="J\'aime">
-            </form>';
+       #Si connecté
+            if(CheckLike($_SESSION["id_utilisateur"], $video["id_video"]))
+            {
+              #Si déjà liké
+              echo'<form method="post" action="" >
+                     <input type="submit" name="unlike" value="J\'aime pas">
+                   </form>';
+
+            }
+            else
+            {
+              #Pas liké
+              echo'<form method="post" action="" >
+                     <input type="submit" name="like" value="J\'aime">
+                   </form>';
+            }
      }
      ?>
      <?php require_once("php/profil.php");
