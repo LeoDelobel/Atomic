@@ -17,10 +17,13 @@
 {
   background-color: rgb(75,75,75);
   color: white;
-  width: 500px;
+  width: 200px;
   border-bottom-right-radius: 30px;
+  border-top-right-radius: 10px;
   font-family: 'Baloo 2';
-  font-size: 30px;
+  font-size: 20px;
+  padding-left : 10px;
+
 }
 
 .profil_pseudo
@@ -28,15 +31,36 @@
 
 }
 
+.profil_img
+{
+  width: 75px;
+  height: 75px;
+  border-radius: 5px;
+  border-bottom-right-radius: 30px;
+  margin-bottom : 10px
+}
+
 
 .abonnement_button
 {
-
+  border-radius: 5px;
   border-bottom-right-radius: 30px;
-  width: 30%;
   background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
   font-family: 'Baloo 2';
-  font-size: 30px;
+  font-size: 20px;
   border-style: none;
   border-width: 5px;
+  margin-bottom: 10px;
+  padding : 0px 20px 0px 20px;
+  width: 90%;
+}
+.info
+{
+  margin-left: 10px;
+}
+.orga
+{
+  padding-top: 10px;
+  display: inline-flex;
+  width: 100%;
 }

@@ -11,13 +11,18 @@
         ?>
 
         <div class="profil">
-          <img class="profil_img" src="#">
-          <p class="profil_pseudo"> <?php echo $utilisateur->pseudonyme ?></p>
-          <p class="profil_abonnes"> <?php echo GetAbonnes($id_utilisateur) ?> abonnés</p>
+          <div class="orga">
+          <img class="profil_img" src="../ressources/nounours.jpg">
+          <div class="info">
+            <p class="profil_pseudo"> <?php echo $utilisateur->pseudonyme ?></p>
+            <p class="profil_abonnes"> <?php echo GetAbonnes($id_utilisateur) ?> abonnés</p>
+          </div>
+        </div>
           <a href="php/validation.php?id_master=<?php echo $utilisateur->id_utilisateur?>">
             <input class="abonnement_button" type="submit" name="abonnement" value="S'abonner">
           </a>
         </div>
+
         <?php
       }
     ?>
