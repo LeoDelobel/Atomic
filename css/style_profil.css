@@ -1,0 +1,42 @@
+/*
+    --light_bg_color: rgb(75,75,75);
+    --dark_bg_color: rgb(38,38,38);
+    --accent_color: rgb(51,171,21);
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+*
+{
+  color: white;
+  padding: 0px;
+  margin: 0px;
+
+}
+
+.profil
+{
+  background-color: rgb(75,75,75);
+  color: white;
+  width: 500px;
+  border-bottom-right-radius: 30px;
+  font-family: 'Baloo 2';
+  font-size: 30px;
+}
+
+.profil_pseudo
+{
+
+}
+
+
+.abonnement_button
+{
+
+  border-bottom-right-radius: 30px;
+  width: 30%;
+  background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
+  font-family: 'Baloo 2';
+  font-size: 30px;
+  border-style: none;
+  border-width: 5px;
+}
