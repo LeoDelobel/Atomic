@@ -30,8 +30,3 @@
     }
   }
   ?>
-
-  <?php require_once("php/profil.php");
-    PrintProfil(2);
-
-  ?>
