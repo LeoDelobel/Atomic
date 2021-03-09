@@ -41,6 +41,11 @@
         AddCommentaire($video["id_video"], $_POST["message"]);
         header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
       }
+      if(isset($_POST["delete_com"]))
+      {
+        RemoveCommentaire($_POST["id_commentaire"]);
+        header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
+      }
 
       ?>
 

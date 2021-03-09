@@ -1,4 +1,24 @@
 <?php
+  function RemoveCommentaire($id_commentaire){
+    // Cette fonction supprime un commentaire selon l'id SI IL EST MODERATEUR OU +
+
+    if($_SESSION["id_role"] >= 2){
+      // L'utilisateur connecté est un modérateur ou +
+
+      require("init_sql.php");
+      $statement = $DATABASE->prepare("DELETE FROM commentaire WHERE id_commentaire = ?");
+      $statement->execute(array($id_commentaire));
+      echo "Debug";
+      print_r($statement->errorInfo());
+
+      return $statement;
+    } else {
+      header('Location: ../index.php');
+
+      return true;
+    }
+  }
+
   function PrintCommentaire($commentaire){
     // Print un commentaire selon un objet SQL (Voir liste_commentaires.php)
 
@@ -12,6 +32,15 @@
       <div class="commentaire_auteur"> <?php PrintProfil($commentaire["id_utilisateur"]); ?></div>
       <p class="commentaire_date"> <?php echo $commentaire["date_publication"]; ?></p>
       <p class="commentaire_message"> <?php echo $commentaire["message"]; ?></p>
+      <?php
+      if($_SESSION["id_role"] >= 2) {
+        // L'utilisateur connecté est un modérateur ou plus
+        echo '<form action="" method="post">
+          <input type="text" name="id_commentaire" value="' . $commentaire["id_commentaire"] . '" style="visibility: collapse;">
+          <input type="submit" name="delete_com" value="Supprimer" />
+        </form>';
+          }
+      ?>
     </div>
   </div>
   <?php

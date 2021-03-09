@@ -32,6 +32,7 @@
           $_SESSION["auth"] = true;
           $_SESSION["pseudonyme"] = $compte["pseudonyme"];
           $_SESSION["id_utilisateur"] = $compte["id_utilisateur"];
+          $_SESSION["id_role"] = $compte["id_role"];
 
           # On retourne true (Donc tout s'est bien passé)
           return true;
