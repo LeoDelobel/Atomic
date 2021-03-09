@@ -19,9 +19,9 @@
     require 'php/liste_videos.php';
     GetDailyVideos();
   ?>
-    <h2>Autres vidéos</h2>
+    <h2>Pour vous :</h2>
   <?php
-    GetOtherVideos();
+    GetMostPopularVideos();
   ?>
 
  </body>

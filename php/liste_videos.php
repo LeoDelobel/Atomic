@@ -1,7 +1,7 @@
 <?php
-    function GetOtherVideos(){
+    function GetMostPopularVideos(){
       require 'php/init_sql.php';
-      $statement = $DATABASE->prepare("SELECT id_video FROM video");
+      $statement = $DATABASE->prepare("SELECT video.id_video, count(visionner.id_video) AS vues FROM video INNER JOIN visionner ON video.id_video = visionner.id_video GROUP BY id_video ORDER BY vues DESC LIMIT 5");
       $statement->execute();
       #Hello
       $liste_id = $statement->fetchAll();
