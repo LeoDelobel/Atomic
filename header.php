@@ -15,7 +15,8 @@
   </head>
   <body>
     <div class="header_background">
-      
+        <div class="fond"><form action="search.php" type="get"><input type="text" id="search_bar" name="q" /><input type="submit" id="search_button" src="ressources/profile" value="Rechercher"/></div>
+      </form>
     </div>
   </body>
 </html>
@@ -23,10 +24,7 @@
 
 
 
-      <form action="search.php" type="get">
-        <input type="text" id="search_bar" name="q" />
-        <input type="submit" id="search_button" src="ressources/profile" value="Rechercher"/>
-      </form>
+
 
 <?php
 

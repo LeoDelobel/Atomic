@@ -1,146 +1,47 @@
-/*Header*/
-element
-{
+/*Header
+
     --light_bg_color: rgb(75,75,75);
     --dark_bg_color: rgb(38,38,38);
     --accent_color: rgb(51,171,21);
-}
+*/
 body
 {
   color: white;
   padding : 0px;
   margin : 0px;
-  background-color: var(--dark_bg_color);
+  background-color: rgb(38,38,38);
 }
-
-
 
 .header_background
 {
   color: white;
-  background-color: var(--light_bg_color);
+  background-color: rgb(75,75,75);
   width: 100%;
   height: 10%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.header
-{
-  background-color: red;
-  padding-bottom:5px;
-  height: 120px;
-  color: white;
-  font-size: 40px;
-  box-shadow: 0px 5px 5px rgb(70,150,20);
-  margin-bottom: 5px;
-}
-.allelements
-{
-  background-color:#404040;
-  height: 120px
-}
-#lgAV
-{
-  position: absolute;
-  top: 10px;
-  left:50px;
-  width: 75px;
-  background-color:#404040;
-}
-#titleAV
-{
-  color:white;
-  margin-top: 25px;
-  width: 350px;
-}
-#profile_picture
-{
-  position: relative;
-  top: 5px;
-  left:10px;
-  height:70px;
-  margin-right:10px;
-
-}
-
 #search_bar
 {
-  margin-top: 30px;
-  height: 50px;
-  width: auto;
-  background-color:white;
-  box-shadow: #64DC46;
+  width : 90%;
+  border-radius: 30px;
+  border-style: none;
+  height : 50px;
+  color: red;
 }
 #search_button
 {
-  background-image: ("ressources/search_icon.jpg");
-  margin-top:30px;
-  height: 60px;
-  width: 60px;
-  margin-left: 10px;
-  left:50px;
-
+  border-radius: 30px;
+  border-style: none;
+  height : 40px;
+  background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
+  width: 10%;
 }
-#account_name_area
+.fond
 {
-  position: relative;
-  margin-left: 10px;
-  left: 5px;
-  top: 10px;
-}
-.grey_area
-{
-  /*Style*/
-  background-color: rgb(80,80,80);
-  border-bottom-right-radius : 30px;
-  height: 80px;
-  padding-right:20px;
-  width: auto;
-  /*Position*/
-  position: relative;
-  right: 0px;
-  margin-top: 20px;
+  background-color : white;
+  width: 80%;
+  padding: 0px;
+  margin : 0px;
+  padding-right: 5px;
+  border-radius: 30px;
 }
