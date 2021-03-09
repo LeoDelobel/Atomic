@@ -1,4 +1,72 @@
 /*Header*/
+element
+{
+    --light_bg_color: rgb(75,75,75);
+    --dark_bg_color: rgb(38,38,38);
+    --accent_color: rgb(51,171,21);
+}
+body
+{
+  color: white;
+  padding : 0px;
+  margin : 0px;
+  background-color: var(--dark_bg_color);
+}
+
+
+
+.header_background
+{
+  color: white;
+  background-color: var(--light_bg_color);
+  width: 100%;
+  height: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .header
 {
   background-color: red;
