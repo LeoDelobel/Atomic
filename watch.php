@@ -9,6 +9,7 @@
   require("php/commentaire.php");
  ?>
 <link rel="stylesheet" href="css/style_search.css"/>
+<link rel="stylesheet" href="css/style_commentaire.css"/>
  <div class="video-container">
    <div class="video">
      <?php
@@ -28,14 +29,17 @@
       if(isset($_POST["like"]))
         {
           AddLike($_SESSION["id_utilisateur"],$video["id_video"]);
+          header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
         }
       if(isset($_POST["unlike"]))
       {
         RemoveLike($_SESSION["id_utilisateur"],$video["id_video"]);
+        header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
       }
       if(isset($_POST["commenter"]))
       {
         AddCommentaire($video["id_video"], $_POST["message"]);
+        header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
       }
 
       ?>

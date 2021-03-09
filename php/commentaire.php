@@ -3,16 +3,17 @@
     // Print un commentaire selon un objet SQL (Voir liste_commentaires.php)
 
     require_once("class_user.php");
+    require_once("profil.php");
 
     // On génère un objet user depuis son id et on prend son pseudonyme
   ?>
-  <span class="commentaire">
+  <div class="commentaire">
     <div class="commentaire_meta">
-      <p class="commentaire_auteur"> <?php echo UserManager::FindUser($commentaire["id_utilisateur"])->pseudonyme; ?></p>
-      <p class="commentaire_date"> Le : <?php echo $commentaire["date_publication"]; ?></p>
+      <div class="commentaire_auteur"> <?php PrintProfil($commentaire["id_utilisateur"]); ?></div>
+      <p class="commentaire_date"> <?php echo $commentaire["date_publication"]; ?></p>
       <p class="commentaire_message"> <?php echo $commentaire["message"]; ?></p>
     </div>
-  </span>
+  </div>
   <?php
   }
 

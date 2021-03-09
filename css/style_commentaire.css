@@ -1,0 +1,20 @@
+.commentaire{
+  margin-bottom: 2%;
+  background-color: grey;
+  width: 50%;
+  height: 10em;
+}
+
+.commentaire_meta{
+  font-style: italic;
+}
+
+.commentaire_auteur{
+  float: left;
+  margin-right: 25px;
+}
+
+.commentaire_message{
+  font-style: normal;
+  margin-left: 50px;
+}
