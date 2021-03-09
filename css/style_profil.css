@@ -19,9 +19,11 @@
   color: white;
   width: 200px;
   border-bottom-right-radius: 30px;
+  border-top-right-radius: 10px;
   font-family: 'Baloo 2';
   font-size: 20px;
   padding-left : 10px;
+
 }
 
 .profil_pseudo
@@ -50,6 +52,7 @@
   border-width: 5px;
   margin-bottom: 10px;
   padding : 0px 20px 0px 20px;
+  width: 90%;
 }
 .info
 {
