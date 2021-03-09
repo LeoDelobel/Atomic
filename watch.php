@@ -6,6 +6,7 @@
   include("header.php");
   include("php/init_sql.php");
   include_once("php/like.php");
+  require("php/commentaire.php");
  ?>
 <link rel="stylesheet" href="css/style_search.css"/>
  <div class="video-container">
@@ -31,6 +32,10 @@
       if(isset($_POST["unlike"]))
       {
         RemoveLike($_SESSION["id_utilisateur"],$video["id_video"]);
+      }
+      if(isset($_POST["commenter"]))
+      {
+        AddCommentaire($video["id_video"], $_POST["message"]);
       }
 
       ?>
@@ -60,10 +65,20 @@
        ?></p>
 
      <hr>
-     <p>Posté par <?php echo $auteur["pseudonyme"];?></p>
+     <p><?php require_once("php/profil.php");
+       PrintProfil(2);
+     ?></p>
+     <hr>
+     <?php if($_SESSION["auth"]){?>
+     <form action="" method="post" class="formCommentaire">
+       <textarea cols="86" rows="2" name="message"></textarea>
+       <input type="submit" value="Commenter" name="commenter">
+     </form>
      <hr>
      <h4>Description</h4>
-     <?php if($_SESSION["auth"])
+   <?php }
+
+   if($_SESSION["auth"])
      {
        #Si connecté
             if(CheckLike($_SESSION["id_utilisateur"], $video["id_video"]))
@@ -83,14 +98,14 @@
             }
      }
      ?>
-     <?php require_once("php/profil.php");
-       PrintProfil(2);
-
-     ?>
      <p><?php echo $video["description"];?></p>
    </div>
 
    <div class="commentaires">
+     <?php
+        require_once("php/liste_commentaires.php");
+        PrintCommentaires($video["id_video"]);
+      ?>
    </div>
 
  </div>

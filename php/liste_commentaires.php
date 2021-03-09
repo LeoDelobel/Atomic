@@ -2,13 +2,14 @@
   function GetCommentaires($id_video){
     // Retourne la liste des commentaires en objet SQL, ne print rien !
 
-    require 'php/init_sql.php';
+    require("init_sql.php");
 
     $statement = $DATABASE->prepare("SELECT * FROM commentaire WHERE id_video = ?");
     $statement->execute(array($id_video));
+    $commentaires = $statement->fetchAll();
 
     // Liste des coms
-    return $statement->fetchAll();
+    return $commentaires;
   }
 
   function PrintCommentaires($id_video){

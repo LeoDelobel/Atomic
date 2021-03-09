@@ -6,10 +6,10 @@
     public $mail;
 
     function __construct($id_utilisateur, $id_role, $pseudonyme, $mail){
-      $this->id_utilisateur = $id_utilisateur;
-      $this->id_role = $id_role;
-      $this->pseudonyme = $pseudonyme;
-      $this->mail = $mail;
+      $this->id_utilisateur = htmlspecialchars($id_utilisateur);
+      $this->id_role = htmlspecialchars($id_role);
+      $this->pseudonyme = htmlspecialchars($pseudonyme);
+      $this->mail = htmlspecialchars($mail);
     }
   }
 

@@ -14,7 +14,7 @@
         <p class="profil_abonnes"> <?php echo GetAbonnes($id_utilisateur) ?> abonnés</p>
         <a href="php/validation.php?id_master=<?php echo $utilisateur->id_utilisateur?>">
           <input type="submit" name="abonnement" value="S'abonner">
-        </form>
+        </a>
       </div>
     </span>
 

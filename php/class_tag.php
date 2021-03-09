@@ -5,18 +5,6 @@ class Tag {
   private var $id_video;
   private var $libelle;
 
-  public function __get($libelle){
-    return $libelle;
-  }
-
-  public function __get($id_tag){
-    return $id_tag;
-  }
-
-  public function __get($video){
-    return $video;
-  }
-
   # Constructeur
   function __construct($id_tag, $id_video, $libelle){
     $this->id_tag = $id_tag;
