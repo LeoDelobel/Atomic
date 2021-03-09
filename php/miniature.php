@@ -17,7 +17,7 @@
       require_once("vues.php");
       ?>
 
-      <a href="watch.php?id_video=  <?php echo $video['id_video'] ?>">
+      <a href="watch.php?id_video=<?php echo $video['id_video'] ?>">
         <span class="miniature">
           <div class="miniature_meta">
             <img class="miniature_img" src="res/miniatures/<?php echo $video["id_video"] ?>.jpg">

@@ -15,8 +15,14 @@
     <?php require 'header.php';?>
     <!-- -->
     <h2>Vidéos du jour</h2>
-  <?php require 'php/liste_videos.php';?>
-
+  <?php
+    require 'php/liste_videos.php';
+    GetDailyVideos();
+  ?>
+    <h2>Autres vidéos</h2>
+  <?php
+    GetOtherVideos();
+  ?>
 
  </body>
 </html>
