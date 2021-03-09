@@ -4,6 +4,7 @@
     --dark_bg_color: rgb(38,38,38);
     --accent_color: rgb(51,171,21);
 */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
 body
 {
   color: white;
@@ -27,6 +28,15 @@ body
   border-style: none;
   height : 50px;
   color: red;
+  font-family: 'Baloo 2';
+  font-size: 20px;
+  padding-left: 15px;
+
+}
+
+#search_bar:focus
+{
+  outline: none;
 }
 #search_button
 {
@@ -35,6 +45,8 @@ body
   height : 40px;
   background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
   width: 10%;
+  font-family: 'Baloo 2';
+  font-size: 22px;
 }
 .fond
 {
@@ -44,4 +56,6 @@ body
   margin : 0px;
   padding-right: 5px;
   border-radius: 30px;
+  box-shadow: 7px 7px 7px rgb(50,50,50);
+  transition: 0.5s ease;
 }
