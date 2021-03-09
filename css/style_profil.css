@@ -32,7 +32,7 @@
 
 .abonnement_button
 {
-
+  border-radius: 5px;
   border-bottom-right-radius: 30px;
   background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
   font-family: 'Baloo 2';
