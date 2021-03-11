@@ -17,6 +17,7 @@
     <div class="header_background">
         <div class="fond"><form action="search.php" type="get"><input type="text" id="search_bar" name="q" /><input type="submit" id="search_button" src="ressources/profile" value="Rechercher"/></div>
       </form>
+      <a href="ajout_video.php"><button>Téléverser</button></a>
     </div>
   </body>
 </html>
