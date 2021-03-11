@@ -73,9 +73,14 @@
        }
        ?></p>
 
+
+     <br><hr><br><h2 style="text-indent: 25px">
+      <?php echo $video["titre"]; ?></h2>
+      <br>
      <hr>
+     <br>
      <p><?php require_once("php/profil.php");
-       PrintProfil(2);
+       PrintProfil($video["id_utilisateur"]);
      ?></p>
      <hr>
      <?php if($_SESSION["auth"]){?>
