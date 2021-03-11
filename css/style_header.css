@@ -5,6 +5,8 @@
     --accent_color: rgb(51,171,21);
 */
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 body
 {
   color: white;
@@ -105,6 +107,7 @@ a
 .disconnect
 {
   color : white;
+  padding: 0px 15px 0px 15px;
   border-radius: 30px;
   border-style: none;
   height : 40px;
@@ -121,34 +124,49 @@ a
 
 .connexion
 {
+  border: none;
   margin: 10px 0px 10px 0px;
   padding : 3px 10px 0px 10px;
   color : white;
   border-radius: 30px;
-  border-style: none;
   height : 40px;
-  background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
+  background-color: rgba(0,0,0,0);
   font-family: 'Baloo 2';
   font-size: 22px;
   width: 100%;
+  transition: 1s;
 }
 
 .connexion:focus
 {
   outline : none;
 }
-.useless_com
+
+.pseudo
 {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin-left:10px;
+  margin-right: 10px;
+}
+.pseudo:hover
+{
+    transition: 0.5 ease;
+    text-shadow: white 1px 0 10px;
+    cursor: default;
 }
 
-/*.pseudo
+.helo
 {
-  margin: 0px 20px 0px 20px;
-}*/
+  margin-top: 22px;
+}
+
+.title
+{
+  margin-left: 50px;
+  font-family: 'Baloo 2';
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: Righteous;
+}
 @media (max-width:960px)
 {
 

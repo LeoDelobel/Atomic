@@ -16,9 +16,18 @@
   </head>
   <body>
     <div class="header_background">
-      <a href="index.php">Atomic</a>
+      <a class="title" href="index.php">Atomic</a>
         <div class="fond"><form action="search.php" type="get"><input type="text" id="search_bar" name="q" /><input type="submit" id="search_button" src="ressources/profile" value="Rechercher"/></div>
       </form>
+      <?php
+      session_start();
+      require_once("php/class_user.php");
+        if($_SESSION['auth']){
+          ?>
+          <button class="upload"><a href="ajout_video.php">UPLOAD</a></button>
+        <?php
+      }
+      ?>
       <div class="profil">
 
         <?php
@@ -30,9 +39,8 @@
 
 
 
-                      echo '<a href="pseudo">'.$_SESSION["pseudonyme"].'</a>';
-                      echo '<button class="upload"><a href="ajout_video.php"><img src="#"/></a></button>';
-                      echo'<form action="php/disconnect.php" method="POST"><button class="disconnect">Déconnexion</button></form>';
+                      echo '<a class="pseudo">'.$_SESSION["pseudonyme"].'</a>';
+                      echo'<form class="helo" action="php/disconnect.php" method="POST"><button class="disconnect">Déconnexion</button></form>';
 
                     } else {
                       echo '<a href="connexion.php">';
