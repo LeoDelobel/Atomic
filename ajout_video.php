@@ -14,6 +14,7 @@ require_once("php/class_video.php");
 if(isset($_POST["ajout"])){
   // Demande d'ajout de vidéo
   $dir_miniatures = "/var/www/atomic/res/miniatures/";
+  $img_type = substr($_FILES['miniature']['type'], 6);
 
   if(
     $_SESSION["auth"] && // Si l'utilisateur est connecté
@@ -25,12 +26,13 @@ if(isset($_POST["ajout"])){
       $_SESSION["id_utilisateur"],
       $_POST["categorie"],
       $_POST["titre"],
-      $_POST["description"]);
+      $_POST["description"],
+      $img_type);
     if($SQL["success"]){
         // Si l'ajout SQL s'est bien passé
         if($_FILES['miniature']['size'] <= 2097152){
           // Si le fichier fait moins de 2Mo
-          $path_miniature = $dir_miniatures . $SQL["id_video"] . '.' . substr($_FILES['miniature']['type'], 6);
+          $path_miniature = $dir_miniatures . $SQL["id_video"] . '.' . $img_type;
           if (move_uploaded_file($_FILES['miniature']['tmp_name'], $path_miniature)) {
             echo "La miniature a été téléchargée avec succès\n";
           } else {

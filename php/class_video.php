@@ -33,13 +33,13 @@
       // ------------ A FAIRE -----------
       return new Video();
     }
-    static public function AddVideo($id_utilisateur, $id_categorie, $titre, $description){
+    static public function AddVideo($id_utilisateur, $id_categorie, $titre, $description, $img_type){
       // Ajoute une nouvelle vidéo dans la base de données (Ne nettoie pas les input !)
 
       require("./php/init_sql.php");
 
-      $statement = $DATABASE->prepare("INSERT INTO video(id_utilisateur, id_categorie, titre, description) VALUES(?, ?, ?, ?)");
-      $statement->execute(array($id_utilisateur, $id_categorie, $titre, $description));
+      $statement = $DATABASE->prepare("INSERT INTO video(id_utilisateur, id_categorie, titre, description, img_type) VALUES(?, ?, ?, ?, ?)");
+      $statement->execute(array($id_utilisateur, $id_categorie, $titre, $description, $img_type));
       print_r($statement->errorInfo());
 
       $resultat = [];
