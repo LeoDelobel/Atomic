@@ -25,7 +25,7 @@ if(isset($_POST["ajout"])){
       $_SESSION["id_utilisateur"],
       $_POST["categorie"],
       $_POST["titre"],
-      $_POST["description"])
+      $_POST["description"]);
     if($SQL["success"]){
         // Si l'ajout SQL s'est bien passé
         if($_FILES['miniature']['size'] <= 2097152){
