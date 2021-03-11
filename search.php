@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="css/style_search.css"/>
  <?php
   if(isset($_GET["q"])){
-    $statement = $DATABASE->prepare("SELECT * FROM video WHERE titre LIKE ?");
+    $statement = $DATABASE->prepare(
+"SELECT video.id_video, video.id_utilisateur, count(visionner.id_video) as vues FROM video INNER JOIN visionner ON video.id_video = visionner.id_video WHERE video.titre LIKE '%e%' GROUP BY video.id_video ORDER BY vues DESC");
     $statement->execute(array('%' . $_GET["q"] . '%'));
 
     $liste_videos = $statement->fetchAll();
