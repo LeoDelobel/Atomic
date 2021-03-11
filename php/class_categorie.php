@@ -46,6 +46,24 @@ class CategorieManager {
     return $resultat;
   }
 
+  static public function GetIDs(){
+    require("./php/init_sql.php");
+    # On demande à la base de données toutes les catégories
+    $statement = $DATABASE->prepare("SELECT id_categorie FROM categorie");
+    $statement->execute();
+    $liste_categories = $statement->fetchAll();
+
+    # On crée la liste de catégories
+    $resultat = array();
+    foreach($liste_categories as $categorie){ # Pour chaque catégorie donnée par le SQL,
+      # On ajoute à la liste un objet Categorie construit sur le tas
+      array_push($resultat, $categorie["id_categorie"]);
+    }
+
+    # On retourne la liste
+    return $resultat;
+  }
+
   # Ajoute une catégorie
   static public function Add($description){
     require("./php/init_sql.php");
