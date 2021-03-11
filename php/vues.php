@@ -12,6 +12,7 @@
 
   function AddVue($id_video, $id_utilisateur){
     // Ajoute une vue à une vidéo donnée
+    // Vérifie la dernière vue pour éviter le spam (Limite de 1 vue par 30 secondes);
 
     require("init_sql.php");
     // On récupère la dernière vue de l'utilisateur
@@ -19,7 +20,7 @@
     $statement->execute(array($id_video, $id_utilisateur));
     $last_vue = $statement->fetchAll()[0]["date_visionnage"];
 
-    echo $last_vue;
+    echo $last_vue + $last_vue;
 
     $statement = $DATABASE->prepare("INSERT INTO visionner(id_utilisateur, id_video) VALUES (?, ?)");
     $statement->execute(array($id_utilisateur, $id_video));
