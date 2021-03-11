@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="header_background">
-      <a class="title" href="index.php">Atomic</a>
+      <a class="title"href="index.php">Atomic</a>
         <div class="fond"><form action="search.php" type="get"><input type="text" id="search_bar" name="q" /><input type="submit" id="search_button" src="ressources/profile" value="Rechercher"/></div>
       </form>
       <?php
@@ -28,7 +28,7 @@
         <?php
       }
       ?>
-      <div class="profil">
+      <div class="profilbackground">
 
         <?php
 
