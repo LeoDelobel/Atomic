@@ -109,6 +109,7 @@
           <input type="text" name="ins_mail" />
         </div>
       </div>
+      <hr>
 
       <div new="container-fluid consent1">
         <input type="checkbox" name="ins_18" />
