@@ -14,10 +14,10 @@
     <!-- On inclut le header -->
     <?php require 'header.php';?>
     <!-- -->
-    <h2>- Vidéos d'aujourd'hui -</h2>
+    <h2>- Vidéos récentes -</h2>
   <?php
     require 'php/liste_videos.php';
-    GetDailyVideos();
+    GetRecentVideos();
   ?>
     <h2>- Pour vous -</h2>
   <?php
