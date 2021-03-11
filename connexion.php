@@ -25,13 +25,11 @@
           # Si la fonction renvoie true
         } else {
           # Afficher le message d'Erreur
-          echo 'March po';
+          echo 'Erreur de connexion';
         }
       } # erreur empty
     }  # erreur empty
   }
-  else
-  {echo "marche po";} # Erreur car le bouton n'est pas utlisé.
     ?>
 
 
@@ -111,6 +109,7 @@
           <input type="text" name="ins_mail" />
         </div>
       </div>
+      <hr>
 
       <div new="container-fluid consent1">
         <input type="checkbox" name="ins_18" />
@@ -137,9 +136,7 @@
             $hached=md5($_POST['ins_pseudo']);
             $statement->execute(array($_POST['ins_pseudo'],$hached,$_POST['ins_mail']));
           }
-          else{echo "rien renseinger";}
         }
-        else{echo "rien renseigner";}
       ?>
 </div>
 
