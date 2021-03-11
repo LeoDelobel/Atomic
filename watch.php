@@ -68,7 +68,7 @@
          }
        } else {
          // Sinon utiliser l'user Anonymous (id : 0)
-         for($i = 0; i < 20; i++){
+         for($i = 0; $i < 20; $i++){
            AddVue($video["id_video"], 0);
          }
        }
