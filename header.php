@@ -32,7 +32,7 @@
 
                       echo '<a href="pseudo">'.$_SESSION["pseudonyme"].'</a>';
                       echo '<button class="upload"><a href="ajout_video.php"><img src="#"/></a></button>';
-                      echo'<form action="php/disconnect.php" method="POST"><input type="button" class="disconnect" value="Disconnecte"></form>';
+                      echo'<form action="php/disconnect.php" method="POST"><button class="disconnect">Déconnexion</button></form>';
 
                     } else {
                       echo '<a href="connexion.php">';
