@@ -109,6 +109,7 @@ a
   background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
   font-family: 'Baloo 2';
   font-size: 22px;
+  margin-right : -120px;
 }
 
 .disconnect
