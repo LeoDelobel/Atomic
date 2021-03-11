@@ -72,9 +72,10 @@ a
   box-shadow: 7px 7px 7px rgb(50,50,50);
 }
 
-.fond2
+.profil
 {
   background-color : rgb(100,100,100);
+  width: auto;
   height: 50px;
   padding: 0px;
   margin : 30px;
@@ -84,7 +85,12 @@ a
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color : white;
+  font-family: 'Baloo 2';
+  font-size: 22px;
+  padding: 0px 10px 0px 10px;
 }
+
 .upload
 {
   color : white;
@@ -95,12 +101,54 @@ a
   font-family: 'Baloo 2';
   font-size: 22px;
 }
-.form
+
+.disconnect
 {
+  color : white;
+  border-radius: 30px;
+  border-style: none;
+  height : 40px;
+  background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
+  font-family: 'Baloo 2';
+  font-size: 22px;
+}
+
+
+.disconnect:focus
+{
+  outline: none;
+}
+
+.connexion
+{
+  margin: 10px 0px 10px 0px;
+  padding : 3px 10px 0px 10px;
+  color : white;
+  border-radius: 30px;
+  border-style: none;
+  height : 40px;
+  background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
+  font-family: 'Baloo 2';
+  font-size: 22px;
+  width: 100%;
+}
+
+.connexion:focus
+{
+  outline : none;
+}
+.useless_com
+{
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+/*.pseudo
+{
+  margin: 0px 20px 0px 20px;
+}*/
 @media (max-width:960px)
 {
 
