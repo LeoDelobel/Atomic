@@ -95,7 +95,12 @@ a
   font-family: 'Baloo 2';
   font-size: 22px;
 }
-
+.form
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 @media (max-width:960px)
 {
 

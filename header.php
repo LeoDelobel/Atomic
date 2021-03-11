@@ -15,38 +15,31 @@
   </head>
   <body>
     <div class="header_background">
+      <a href="index.php">Atomic</a>
         <div class="fond"><form action="search.php" type="get"><input type="text" id="search_bar" name="q" /><input type="submit" id="search_button" src="ressources/profile" value="Rechercher"/></div>
       </form>
-      <div class="fond2"><button class="upload"><a href="ajout_video.php"><img src="#"/></a></button></div>
+      <div class="fond2">
+        <?php
+
+                  # Si l'utilisateur est connecté, $_SESSION["auth"] est true
+                  session_start();
+                  require_once("php/class_user.php");
+                    if($_SESSION['auth']){
+
+                      echo $_SESSION["pseudonyme"];
+                      echo '<button class="upload"><a href="ajout_video.php"><img src="#"/></a></button>';
+                      echo'<form class = "form" action="php/disconnect.php" method="POST">
+                            <button class="upload">Déconnexion</button>
+                      </form>';
+
+                    } else {
+                      echo '<a href="connexion.php">';
+                      echo 'Se connecter';
+                      echo '</a>';
+                    }
+                  ?>
+      </div>
 
     </div>
   </body>
 </html>
-
-
-
-
-
-
-<?php
-
-          # Si l'utilisateur est connecté, $_SESSION["auth"] est true
-          session_start();
-          require_once("php/class_user.php");
-            if($_SESSION['auth']){
-              echo 'Bonjour ' . $_SESSION["pseudonyme"];
-              echo'<form action="php/disconnect.php" method="POST">
-                    <button class="btn_logout">Déconnexion</button>
-              </form>';
-
-            } else {
-              echo '<a href="connexion.php">';
-              echo 'Se connecter';
-              echo '</a>';
-            }
-          ?></p>
-        </div>
-
-      </div>
-    </div>
-  </div>
