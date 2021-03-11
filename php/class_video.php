@@ -4,38 +4,55 @@
     public $id_utilisateur;
     public $id_categorie;
     public $date_publication;
-    public $nombre_likes;
-    public $nombre_vues;
     public $titre;
     public $description;
 
     function __construct(
-      $id_video, $id_utilisateur, $id_categorie, $date_publication,
-      $nombre_likes, $nombre_vues, $titre, $description
+      $id_video, $id_utilisateur, $id_categorie, $date_publication, $titre, $description
     ){
       $this->$id_video = $id_video;
       $this->$id_utilisateur = $id_utilisateur;
       $this->$id_categorie = $id_categorie;
       $this->$date_publication = $date_publication;
-      $this->$nombre_likes = $nombre_likes;
-      $this->$nombre_vues = $nombre_vues;
       $this->$titre = $titre;
       $this->$description = $description;
     }
   }
 
   class VideoManager{
-    static public function GetById($id_categorie){
+    static public function GetById($id_video){
       require("./php/init_sql.php");
-      # On demande à la base de données quelles catégories ont la même id
-      $statement = $DATABASE->prepare("SELECT * FROM categorie WHERE id_categorie = ?");
-      $statement->execute(array($id_categorie));
+      # On demande à la base de données quelles vidéos ont l'id donnée
+      $statement = $DATABASE->prepare("SELECT * FROM video WHERE id_video = ?");
+      $statement->execute(array($id_video));
 
-      # On extrait une seule catégorie
+      # On extrait une seule vidéo
       $categorie = $statement->fetchAll()[0];
 
-      # On retourne directement un objet Categorie créé à partir de la requête SQL ($categorie)
-      return new Categorie($categorie['id_categorie'], $categorie['description']);
+      # On retourne directement un objet vidéo
+      // ------------ A FAIRE -----------
+      return new Video();
+    }
+    static public function AddVideo($id_utilisateur, $id_categorie, $titre, $description, $img_type){
+      // Ajoute une nouvelle vidéo dans la base de données (Ne nettoie pas les input !)
+
+      require("./php/init_sql.php");
+
+      $statement = $DATABASE->prepare("INSERT INTO video(id_utilisateur, id_categorie, titre, description, img_type) VALUES(?, ?, ?, ?, ?)");
+      $statement->execute(array($id_utilisateur, $id_categorie, $titre, $description, $img_type));
+      print_r($statement->errorInfo());
+
+      $resultat = [];
+      $resultat["success"] = $statement;
+
+      $statement = $DATABASE->prepare("SELECT id_video FROM video WHERE id_utilisateur = ? ORDER BY date_publication DESC");
+      $statement->execute(array($id_utilisateur));
+      $video = $statement->fetchAll()[0];
+
+      $resultat["id_video"] = $video["id_video"];
+
+      // On retourne vrai ou faux
+      return $resultat;
     }
   }
  ?>
