@@ -14,7 +14,6 @@ require_once("php/class_video.php");
 if(isset($_POST["ajout"])){
   // Demande d'ajout de vidéo
   $dir_miniatures = "/var/www/atomic/res/miniatures";
-  $path_miniature = $dir_miniatures . basename($_FILES['miniature']['name']);
 
   if(
     $_SESSION["auth"] && // Si l'utilisateur est connecté
@@ -22,14 +21,16 @@ if(isset($_POST["ajout"])){
     in_array($_POST["categorie"], CategorieManager::GetIDs()) // Et fait partie des id existants
   ){
     // AddVideo($id_utilisateur, $id_categorie, $titre, $description)
-    if(VideoManager::AddVideo(
+    $SQL = VideoManager::AddVideo(
       $_SESSION["id_utilisateur"],
       $_POST["categorie"],
       $_POST["titre"],
-      $_POST["description"])){
+      $_POST["description"])
+    if($SQL["success"]){
         // Si l'ajout SQL s'est bien passé
         if($_FILES['miniature']['size'] <= 2097152){
           // Si le fichier fait moins de 2Mo
+          $path_miniature = $dir_miniatures . $SQL["id_video"]);
           if (move_uploaded_file($_FILES['miniature']['tmp_name'], $path_miniature)) {
             echo "La miniature a été téléchargée avec succès\n";
           } else {
