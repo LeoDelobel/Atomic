@@ -19,7 +19,7 @@
     require 'php/liste_videos.php';
     GetRecentVideos();
   ?>
-    <h2>- Pour vous -</h2>
+    <h2>- Vidéos populaires -</h2>
   <?php
     GetMostPopularVideos();
   ?>
