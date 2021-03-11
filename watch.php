@@ -80,7 +80,7 @@
      <hr>
      <br>
      <p><?php require_once("php/profil.php");
-       PrintProfil(2);
+       PrintProfil($video["id_utilisateur"]);
      ?></p>
      <hr>
      <?php if($_SESSION["auth"]){?>
