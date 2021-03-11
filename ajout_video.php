@@ -30,7 +30,7 @@ if(isset($_POST["ajout"])){
         // Si l'ajout SQL s'est bien passé
         if($_FILES['miniature']['size'] <= 2097152){
           // Si le fichier fait moins de 2Mo
-          $path_miniature = $dir_miniatures . $SQL["id_video"]);
+          $path_miniature = $dir_miniatures . $SQL["id_video"];
           if (move_uploaded_file($_FILES['miniature']['tmp_name'], $path_miniature)) {
             echo "La miniature a été téléchargée avec succès\n";
           } else {
