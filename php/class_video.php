@@ -47,7 +47,7 @@
 
       $statement = $DATABASE->prepare("SELECT id_video FROM video WHERE id_utilisateur = ? ORDER BY date_publication DESC");
       $statement->execute(array($id_utilisateur));
-      $video = $statement->fetchAll[0];
+      $video = $statement->fetchAll()[0];
 
       $resultat["id_video"] = $video["id_video"];
 
