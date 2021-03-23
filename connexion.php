@@ -1,12 +1,10 @@
-<?php
-  require "header.php";
-  require "php/init_sql.php"
-?>
-<html>
-<head> <!-- ______________ HEAD _______________________________________________________________________________________________________-->
+
+<html> <!-- ______________ HEAD _______________________________________________________________________________________________________-->
   <link rel ="stylesheet" href = "css/style_connexion.css"/>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
+  <?php
+    require "header.php";
+    require "php/init_sql.php"
+  ?>
 <body>
   <div class="page_connexion">
     <?php
@@ -32,102 +30,33 @@
     }  # erreur empty
   }
     ?>
-
-
-
-  <div class='row rangement'>
     <form method="POST" action="./connexion.php">
+            <input type="text" name="pseudo" class="inp_pseudo_conn"/>
 
-      <div class="container-fluid connexion_area">
-        <div class="row">
+            <input type="password" name="pwd" class="pwd" />
 
-          <div class="container-fluid">
-            <h1>Connexion</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="container-fluid pseudo">
-            <h3>Pseudo : </h3>
-          </div>
-          <div class="container-fluid input_pseudo">
-            <input type="text" name="pseudo" />
-          </div>
-
-        </div>
-        <div class="row">
-
-          <div class="container-fluid col-sm-auto password">
-            <h3>Mot de passe :</h3>
-          </div>
-          <div class="container-fluid col-sm-auto input_pwd">
-            <input type="password" name="pwd" />
-          </div>
-
-        </div>
-        <div class="row">
-          <div class="container-fluid">
-            <input type="submit" name="btn_connexion" value="Se connecter" />
-         </div>
-        </div>
-      </div>
+            <input type="submit" name="btn_connexion" value="Se connecter" id="btn_connexion" />
     </form>
-
 <!--Inscription zone -->
-
+<!--
     <div class="row">
       <form method="POST" action="./connexion.php">
 
-      <div class="container-fluid col-sm-auto inscription_area">
-        <div class="row">
-
-          <div class="container-fluid">
-            <h1>Inscription</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="container-fluid pseudo">
-            <h3>Pseudo : </h3>
-          </div>
-          <div class="container-fluid input_pseudo">
             <input type="text" name="ins_pseudo" />
-          </div>
 
-        </div>
-        <div class="row">
-
-          <div class="container-fluid password">
-            <h3>Mot de passe :</h3>
-          </div>
-          <div class="container-fluid input_pwd">
             <input type="password" name="ins_pwd" />
-          </div>
-        </div>
 
-        <div class="container-fluid mail">
-          <h3>E-mail :</h3>
-        </div>
-        <div class="container-fluid input_pwd">
-          <input type="text" name="ins_mail" />
-        </div>
-      </div>
-      <hr>
+            <input type="text" name="ins_mail" />
 
-      <div new="container-fluid consent1">
-        <input type="checkbox" name="ins_18" />
-        <p>Je certifie que je suis agé·e·s de plus de 18 ans</p>
-      </div>
+            <input type="checkbox" name="ins_18" />
+              <p>Je certifie que je suis agé·e·s de plus de 18 ans</p>
 
-      <div new="container-fluid consent1">
-        <input type="checkbox" name="ins_conditionsgene" />
-        <p>Je certifie avoir lu les <a>Conditions général d'utilisation</a> du site Atomic vidéo</p>
-      </div>
-        <div class="row">
-          <div class="container-fluid">
-            <input type="submit" name="btn_inscription" value="S'incrire" />
-         </div>
-        </div>
-      </div>
-    </form>
+            <input type="checkbox" name="ins_conditionsgene" />
+              <p>Je certifie avoir lu les <a>Conditions général d'utilisation</a> du site Atomic vidéo</p>
+
+            <input type="submit" name="btn_inscription" value="S'incrire" id="btn_inscription"/>
+          </form>
+-->
       <?php
         if(isset($_POST['ins_pseudo']) && isset($_POST['ins_pwd']) && isset($_POST['ins_mail']))
         {
