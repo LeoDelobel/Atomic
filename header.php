@@ -24,7 +24,7 @@
       require_once("php/class_user.php");
         if($_SESSION['auth']){
           ?>
-          <button class="upload"><a href="ajout_video.php">UPLOAD</a></button>
+          <button class="header_button"><a href="ajout_video.php"><img src="upload.png"></a></button>
         <?php
       }
       ?>
