@@ -21,6 +21,7 @@
         require_once("php/class_user.php");
         if(UserManager::Connexion($_POST['pseudo'], $_POST['pwd'])){
           echo 'Bonjour '.$_POST['pseudo'];
+          header('Location: index.php');
 
           # Si la fonction renvoie true
         } else {
@@ -59,7 +60,7 @@
             <h3>Mot de passe :</h3>
           </div>
           <div class="container-fluid col-sm-auto input_pwd">
-            <input type="text" name="pwd" />
+            <input type="password" name="pwd" />
           </div>
 
         </div>
@@ -98,7 +99,7 @@
             <h3>Mot de passe :</h3>
           </div>
           <div class="container-fluid input_pwd">
-            <input type="text" name="ins_pwd" />
+            <input type="password" name="ins_pwd" />
           </div>
         </div>
 
@@ -135,6 +136,7 @@
             $statement= $DATABASE->prepare("INSERT INTO utilisateur (id_role,pseudonyme,pass,mail) VALUES (1,?,?,?)");
             $hached=md5($_POST['ins_pseudo']);
             $statement->execute(array($_POST['ins_pseudo'],$hached,$_POST['ins_mail']));
+            header('Location: index.php');
           }
         }
       ?>
