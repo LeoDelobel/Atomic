@@ -30,26 +30,26 @@
           </div>
           <?php
       }
-      ?>
-      <div class="profilbackground">
-
-        <?php
 
                   # Si l'utilisateur est connecté, $_SESSION["auth"] est true
                   session_start();
                   require_once("php/class_user.php");
                     if($_SESSION['auth']){
+                      ?>
 
-
-
-                      echo '<a class="pseudo">'.$_SESSION["pseudonyme"].'</a>';
-                      echo'<form class="helo" action="php/disconnect.php" method="POST"><button class="disconnect">Déconnexion</button></form>';
-
+                      <div class="profilbackground">
+                        <a class="pseudo"><?php echo $_SESSION["pseudonyme"] ?></a>
+                        <form class="helo" action="php/disconnect.php" method="POST"><button class="disconnect">Déconnexion</button></form>
+                      </div>
+<?php
                     } else {
-                      echo '<a href="connexion.php">';
-                      echo '<button class="connexion">Se connecter</button>';
-                      echo '</a>';
-
+                      ?>
+                      <div class="profilbackground_connexion">
+                      <a href="connexion.php">
+                        <button class="connexion">Se connecter</button>
+                      </a>
+                      </div>
+<?php
                     }
                   ?>
       </div>
