@@ -28,13 +28,7 @@ a
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: 1s ease;
-}
-
-.header_background:hover
-{
-  height: 95%;
-  transition: 1s ease;
+  transition-timing-function: ease-in-out;
 }
 
 #search_bar
@@ -46,24 +40,22 @@ a
   color: red;
   font-family: 'Baloo 2';
   font-size: 20px;
-  padding-left: 15px;
+  padding: 15px;
   color: black;
 }
 
-#search_bar:focus
-{
-  outline: none;
-}
 #search_button
 {
+  position: relative;
   color : white;
   border-radius: 30px;
   border-style: none;
   height : 40px;
   background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
-  width: 12%;
+  width: 22%;
   font-family: 'Baloo 2';
   font-size: 22px;
+  float: right;
 }
 #search_button:focus
 {
@@ -72,13 +64,19 @@ a
 .fond
 {
   background-color : white;
-  width: 60%;
+  width: 30%;
   height: 50px;
   padding: 0px;
   margin : 0px;
   padding-right: 5px;
   border-radius: 30px;
   box-shadow: 7px 7px 7px rgb(50,50,50);
+}
+
+.fond:hover{
+  transition-timing-function: ease;
+  width: 70%;
+  transition: 1s;
 }
 
 .profilbackground
@@ -175,6 +173,7 @@ a
   text-transform: uppercase;
   font-family: Righteous;
 }
+
 @media (max-width:960px)
 {
 
