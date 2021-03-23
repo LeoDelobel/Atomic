@@ -68,7 +68,8 @@ a
 }
 
 .fond:focus-within{
-  width: 70%;
+  left: 0;
+  width: calc(50% - 150px - 20px);
 }
 
 .fond:focus-within #search_button{
@@ -79,15 +80,23 @@ a
   width: 80%;
 }
 
-.fond:focus-within + .header_button{
+.fond:focus-within ~ .header_list_buttons{
   transition: 0.5s ease;
   margin-top: 100px;
+  float: left;
+  bottom: auto;
+  margin-left: -300px;
+}
+
+.header_list_buttons {
+  transition: 1s ease;
 }
 
 .profilbackground
 {
   background-color : rgb(100,100,100);
-  width: auto;
+  min-width: 150px;
+  width: 20%;
   height: 50px;
   padding: 0px;
   margin : 30px;
@@ -105,16 +114,15 @@ a
 
 .header_button
 {
-  position: absolute;
+  width: 50px;
+  height : 40px;
   color : white;
   border-radius: 30px;
   border-style: none;
-  height : 40px;
   background: linear-gradient(0.25turn, rgb(40,40,40), rgb(60,60,60));
-  font-family: 'Baloo 2';
-  font-size: 22px;
-  right: 20%;
   transition: 0.6s ease-in;
+  padding: 5px;
+  margin: 10px;
 }
 
 .header_button img {

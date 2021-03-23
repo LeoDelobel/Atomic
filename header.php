@@ -24,8 +24,11 @@
       require_once("php/class_user.php");
         if($_SESSION['auth']){
           ?>
-          <button class="header_button"><a href="ajout_video.php"><img src="upload.png"></a></button>
-        <?php
+          <div class="header_list_buttons">
+            <button class="header_button"><a href="ajout_video.php"><img src="upload.png" /></a></button>
+            <button class="header_button"><a href="ajout_video.php"><img src="cloche.png" /></a></button>
+          </div>
+          <?php
       }
       ?>
       <div class="profilbackground">
