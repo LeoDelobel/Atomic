@@ -25,58 +25,68 @@ a
   background-color: rgb(75,75,75);
   width: 100%;
   height: 110px;
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
   transition-timing-function: ease-in-out;
 }
 
 #search_bar
 {
-  width : 88%;
+  width : calc(100% - 130px);
   border-radius: 30px;
   border-style: none;
   height : 50px;
   color: red;
   font-family: 'Baloo 2';
   font-size: 20px;
-  padding: 15px;
   color: black;
 }
 
 #search_button
 {
-  position: relative;
   color : white;
   border-radius: 30px;
   border-style: none;
   height : 40px;
   background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
-  width: 22%;
+  width: 130px;
   font-family: 'Baloo 2';
   font-size: 22px;
-  float: right;
 }
+
 #search_button:focus
 {
   outline : none;
 }
+
 .fond
 {
   background-color : white;
   width: 30%;
   height: 50px;
-  padding: 0px;
-  margin : 0px;
   padding-right: 5px;
   border-radius: 30px;
   box-shadow: 7px 7px 7px rgb(50,50,50);
+  transition: 1s ease;
 }
 
 .fond:hover{
-  transition-timing-function: ease;
   width: 70%;
-  transition: 1s;
+}
+
+.fond:hover #search_button{
+  width: 20%;
+}
+
+.fond:hover #search_bar{
+  width: 80%;
+}
+
+.fond:hover + .upload{
+  animation-name: disparition;
+    animation-duration: 400ms;
+    animation-fill-mode: forwards;
 }
 
 .profilbackground
@@ -96,6 +106,20 @@ a
   font-family: 'Baloo 2';
   font-size: 22px;
   padding: 0px 10px 0px 10px;
+}
+
+@keyframes disparition{
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    font-size: 0;
+    height: 0px;
+    opacity: 0;
+  }
 }
 
 .upload
@@ -168,6 +192,7 @@ a
 .title
 {
   margin-left: 50px;
+  margin-right: 50px;
   font-family: 'Baloo 2';
   font-size: 30px;
   text-transform: uppercase;
