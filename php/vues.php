@@ -20,8 +20,6 @@
     $statement->execute(array($id_video, $id_utilisateur));
     $last_vue = $statement->fetchAll()[0]["date_visionnage"];
 
-    echo $last_vue + $last_vue;
-
     $statement = $DATABASE->prepare("INSERT INTO visionner(id_utilisateur, id_video) VALUES (?, ?)");
     $statement->execute(array($id_utilisateur, $id_video));
 

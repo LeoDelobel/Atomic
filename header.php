@@ -7,14 +7,10 @@
 
 
 <!doctype html>
-<html>
-  <head>
     <meta charset="utf-8">
     <link rel ="stylesheet" href = "css/style_header.css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
-  </head>
-  <body>
     <div class="header_background">
       <a class="title"href="index.php">Atomic</a>
         <div class="fond"><form action="search.php" type="get"><input type="text" id="search_bar" name="q" /><input type="submit" id="search_button" src="ressources/profile" value="Rechercher"/></div>
@@ -55,5 +51,3 @@
       </div>
 
     </div>
-  </body>
-</html>

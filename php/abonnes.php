@@ -25,7 +25,8 @@
     $statement = $DATABASE->prepare("SELECT COUNT(id_master) AS nombre FROM abonner WHERE id_master = ? AND id_slave = ?"); // Commande SQL
     $statement->execute(array($id_master, $id_slave));
     $abonnement = $statement->fetchAll()[0];
-    return ($abonnement[0] > 0); // On retourne vrai si l'utilisateur est abonnée
+    print_r($id_slave);
+    return ($abonnement["nombre"] > 0); // On retourne vrai si l'utilisateur est abonnée
   }
 
 

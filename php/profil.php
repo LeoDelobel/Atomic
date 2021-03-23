@@ -19,7 +19,19 @@
           </div>
         </div>
           <a href="php/validation.php?id_master=<?php echo $utilisateur->id_utilisateur?>">
-            <input class="abonnement_button" type="submit" name="abonnement" value="S'abonner">
+            <?php
+            require_once("abonnes.php");
+            if($_SESSION["auth"]){
+                  // Si l'utilisateur est connecté
+                if(CheckAbonnement($utilisateur->id_utilisateur, $_SESSION["id_utilisateur"])){ ?>
+                <input class="abonnement_button_y" type="submit" name="abonnement" value="Abonné">
+              <?php } else {
+                ?>
+                <input class="abonnement_button_n" type="submit" name="abonnement" value="S'abonner">
+                <?php
+              }
+            }
+          ?>
           </a>
         </div>
 
