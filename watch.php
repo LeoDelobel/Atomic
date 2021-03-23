@@ -85,8 +85,8 @@
      <hr>
      <?php if($_SESSION["auth"]){?>
      <form action="" method="post" class="formCommentaire">
-       <textarea cols="86" rows="2" name="message"></textarea>
-       <input type="submit" value="Commenter" name="commenter">
+       <textarea cols="86" rows="2" name="message" class="commentaire_message"></textarea>
+       <input type="submit" value="Commenter" name="commenter" style="color: black">
      </form>
      <hr>
      <h4>Description</h4>
@@ -99,7 +99,7 @@
             {
               #Si déjà liké
               echo'<form method="post" action="" >
-                     <input type="submit" name="unlike" value="J\'aime pas">
+                     <input type="submit" name="unlike" value="J\'aime pas" style="color: black">
                    </form>';
 
             }
@@ -107,7 +107,7 @@
             {
               #Pas liké
               echo'<form method="post" action="" >
-                     <input type="submit" name="like" value="J\'aime">
+                     <input type="submit" name="like" value="J\'aime" style="color: black">
                    </form>';
             }
      }
