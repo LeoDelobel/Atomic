@@ -13,6 +13,8 @@
  ?>
 <link rel="stylesheet" href="css/style_search.css"/>
 <link rel="stylesheet" href="css/style_commentaire.css"/>
+<link rel="stylesheet" href="css/style_profil.css"/>
+
  <div class="video-container">
    <div class="video">
      <?php
@@ -76,8 +78,8 @@
       <br>
      <hr>
      <br>
-     <p><?php require_once("php/profil.php");
-       PrintProfil($auteur->id_utilisateur);
+     <p><?php
+       UserManager::PrintProfil($auteur);
      ?></p>
      <hr>
      <?php if($_SESSION["auth"]){?>
