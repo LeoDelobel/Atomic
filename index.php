@@ -5,6 +5,10 @@
 # URL         : http://176.166.235.56
  ?>
 
+<?php
+  require_once("php/class_video.php");
+ ?>
+
 <html>
   <head>
     <link rel="stylesheet" href="css/style_index.css"/>
@@ -16,12 +20,11 @@
     <!-- -->
     <h2>- Vidéos récentes -</h2>
   <?php
-    require 'php/liste_videos.php';
-    GetRecentVideos();
+    VideoManager::PrintVideos(VideoManager::GetRecentVideos());
   ?>
     <h2>- Vidéos populaires -</h2>
   <?php
-    GetMostPopularVideos();
+    VideoManager::PrintVideos(VideoManager::GetMostPopularVideos());
   ?>
 
  </body>

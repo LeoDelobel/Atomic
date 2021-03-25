@@ -10,12 +10,12 @@
     function __construct(
       $id_video, $id_utilisateur, $id_categorie, $date_publication, $titre, $description
     ){
-      $this->$id_video = $id_video;
-      $this->$id_utilisateur = $id_utilisateur;
-      $this->$id_categorie = $id_categorie;
-      $this->$date_publication = $date_publication;
-      $this->$titre = $titre;
-      $this->$description = $description;
+      $this->id_video = $id_video;
+      $this->id_utilisateur = $id_utilisateur;
+      $this->id_categorie = $id_categorie;
+      $this->date_publication = $date_publication;
+      $this->titre = $titre;
+      $this->description = $description;
     }
   }
 
@@ -27,11 +27,18 @@
       $statement->execute(array($id_video));
 
       # On extrait une seule vidéo
-      $categorie = $statement->fetchAll()[0];
+      $video = $statement->fetchAll()[0];
 
       # On retourne directement un objet vidéo
       // ------------ A FAIRE -----------
-      return new Video();
+      // On remercie l'auteur de la ligne précédente qui avait tout oublié depuis
+
+      return new Video($video['id_video'],
+      $video['id_utilisateur'],
+      $video['id_categorie'],
+      $video['date_publication'],
+      $video['titre'],
+      $video['description']);
     }
     static public function AddVideo($id_utilisateur, $id_categorie, $titre, $description, $img_type){
       // Ajoute une nouvelle vidéo dans la base de données (Ne nettoie pas les input !)
@@ -53,6 +60,68 @@
 
       // On retourne vrai ou faux
       return $resultat;
+    }
+
+    static public function GetMostPopularVideos(){
+      // Pour une certaine raison, la fonction ne prend que les ID des vidéos les plus regardées
+
+      require 'php/init_sql.php';
+      $statement = $DATABASE->prepare("SELECT video.id_video, count(visionner.id_video) AS vues FROM video INNER JOIN visionner ON video.id_video = visionner.id_video GROUP BY id_video ORDER BY vues DESC LIMIT 5");
+      $statement->execute();
+      #Hello
+      $liste_id = $statement->fetchAll();
+
+      // On va transformer les id en objets Video
+      $resultat = array();
+      foreach($liste_id as $id){
+        array_push($resultat, VideoManager::GetById($id["id_video"]));
+      }
+
+      // On peut alors envoyer le tableau dans PrintVideos
+      return $resultat;
+    }
+    static public function GetRecentVideos(){
+      // Demande les 5 dernières vidéos
+
+      require 'php/init_sql.php';
+      $statement = $DATABASE->prepare("SELECT id_video FROM video WHERE date(date_publication) = CURDATE() ORDER BY date_publication DESC LIMIT 5");
+      $statement->execute();
+      #Hello
+      $liste_id = $statement->fetchAll();
+
+      // On va transformer les id en objets Video
+      $resultat = array();
+      foreach($liste_id as $id){
+        array_push($resultat, VideoManager::GetById($id["id_video"]));
+      }
+
+      // On peut alors envoyer le tableau dans PrintVideos
+      return $resultat;
+    }
+
+    static public function PrintVideos($liste){
+      // Fait une liste de miniatures basée sur une liste d'objets Video
+      // On commence la liste des vidéos
+      require_once('miniature.php');
+
+        ?>
+      <div class="liste_videos">
+      <ul>
+        <?php
+      foreach($liste as $video){
+        ?>
+        <li style="display:inline-block">
+          <?php
+          // On passe l'objet à printMiniature()
+          printMiniature($video);
+          ?>
+        </li>
+      <?php
+      }
+      ?>
+        </ul>
+      </div>
+      <?php
     }
   }
  ?>
