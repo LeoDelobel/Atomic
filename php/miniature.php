@@ -17,7 +17,7 @@
             <img class="miniature_img" src="res/miniatures/<?php echo $video->id_video . '.' . $video->img_type ?>">
             <p class="miniature_titre"> <?php echo $video->titre ?></p>
             <p class="miniature_vues"> <?php
-            $nb_vues = GetVues($id_video);
+            $nb_vues = GetVues($video->id_video);
             if($nb_vues == 1){
               echo $nb_vues . " vue";
             } else {
