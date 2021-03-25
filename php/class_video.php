@@ -20,26 +20,6 @@
   }
 
   class VideoManager{
-    static public function GetById($id_video){
-      require("./php/init_sql.php");
-      # On demande à la base de données quelles vidéos ont l'id donnée
-      $statement = $DATABASE->prepare("SELECT * FROM video WHERE id_video = ?");
-      $statement->execute(array($id_video));
-
-      # On extrait une seule vidéo
-      $video = $statement->fetchAll()[0];
-
-      # On retourne directement un objet vidéo
-      // ------------ A FAIRE -----------
-      // On remercie l'auteur de la ligne précédente qui avait tout oublié depuis
-
-      return new Video($video['id_video'],
-      $video['id_utilisateur'],
-      $video['id_categorie'],
-      $video['date_publication'],
-      $video['titre'],
-      $video['description']);
-    }
     static public function AddVideo($id_utilisateur, $id_categorie, $titre, $description, $img_type){
       // Ajoute une nouvelle vidéo dans la base de données (Ne nettoie pas les input !)
 
@@ -62,6 +42,43 @@
       return $resultat;
     }
 
+    static public function GetById($id_video){
+      require("./php/init_sql.php");
+      # On demande à la base de données quelles vidéos ont l'id donnée
+      $statement = $DATABASE->prepare("SELECT * FROM video WHERE id_video = ?");
+      $statement->execute(array($id_video));
+
+      # On extrait une seule vidéo
+      $video = $statement->fetchAll()[0];
+
+      # On retourne directement un objet vidéo
+      // ------------ A FAIRE -----------
+      // On remercie l'auteur de la ligne précédente qui avait tout oublié depuis
+
+      return new Video($video['id_video'],
+      $video['id_utilisateur'],
+      $video['id_categorie'],
+      $video['date_publication'],
+      $video['titre'],
+      $video['description']);
+    }
+    static public function GetHaving($recherche){
+      include("init_sql.php");
+
+      $statement = $DATABASE->prepare("SELECT video.id_video, video.id_utilisateur, count(visionner.id_video) as vues FROM video INNER JOIN visionner ON video.id_video = visionner.id_video WHERE video.titre LIKE ? GROUP BY video.id_video ORDER BY vues DESC");
+      $statement->execute(array('%' . $recherche . '%'));
+
+      $liste_id = $statement->fetchAll();
+
+      // On va transformer les id en objets Video
+      $resultat = array();
+      foreach($liste_id as $id){
+        array_push($resultat, VideoManager::GetById($id["id_video"]));
+      }
+
+      // On peut alors envoyer le tableau dans PrintVideos
+      return $resultat;
+    }
     static public function GetMostPopularVideos(){
       // Pour une certaine raison, la fonction ne prend que les ID des vidéos les plus regardées
 
