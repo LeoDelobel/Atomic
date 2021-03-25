@@ -104,6 +104,10 @@ function inscription()
   radis.style.margin="200%";
 }
 
+function problem()
+{
+  
+}
 
 
 
