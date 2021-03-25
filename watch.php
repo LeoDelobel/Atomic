@@ -7,38 +7,35 @@
   include("php/init_sql.php");
   include_once("php/like.php");
   require_once("php/class_commentaire.php");
+  require_once("php/class_user.php");
+  require_once("php/class_video.php");
+
  ?>
 <link rel="stylesheet" href="css/style_search.css"/>
 <link rel="stylesheet" href="css/style_commentaire.css"/>
  <div class="video-container">
    <div class="video">
      <?php
-      $statement = $DATABASE->prepare("SELECT * FROM video WHERE id_video = ?");
-      $statement->execute(array($_GET["id_video"]));
+      $video = VideoManager::GetById($_GET["id_video"]);
+      $auteur = UserManager::FindUser($video->id_utilisateur);
 
-      $video = $statement->fetchAll()[0];
       # La vidéo se trouve dans res/videos/[ID_VIDEO].mp4
-
-      $statement = $DATABASE->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = ?");
-      $statement->execute(array($video["id_utilisateur"]));
-
-      $auteur = $statement->fetchAll()[0];
       ?>
 
       <?php
       if(isset($_POST["like"]))
       {
-        AddLike($_SESSION["id_utilisateur"],$video["id_video"]);
+        AddLike($_SESSION["id_utilisateur"],$video->id_video);
         header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
       }
       if(isset($_POST["unlike"]))
       {
-        RemoveLike($_SESSION["id_utilisateur"],$video["id_video"]);
+        RemoveLike($_SESSION["id_utilisateur"],$video->id_video);
         header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
       }
       if(isset($_POST["commenter"]))
       {
-        CommentaireManager::AddCommentaire($video["id_video"], $_SESSION["id_utilisateur"], $_POST["message"]);
+        CommentaireManager::AddCommentaire($video->id_video, $_SESSION["id_utilisateur"], $_POST["message"]);
         header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
       }
       if(isset($_POST["delete_com"]))
@@ -50,7 +47,7 @@
       ?>
 
       <video controls>
-        <source src="res/videos/<?php echo $video["id_video"];?>.mp4" type="video/mp4">
+        <source src="res/videos/<?php echo $video->id_video?>.mp4" type="video/mp4">
       </video>
    </div>
 
@@ -59,28 +56,28 @@
        <?php
        require("php/vues.php");
        require_once("php/like.php");
-       echo GetVues($video["id_video"]) . ' vues  •  ';
-       echo $video["date_publication"] . '  •  👍';
-       echo GetLikes($video["id_video"]);
+       echo GetVues($video->id_video) . ' vues  •  ';
+       echo $video->date_publication . '  •  👍';
+       echo GetLikes($video->id_video);
        if($_SESSION["auth"]){
          // Si l'utilisateur est connecté, il a un id utilisateur à ajouter
-         if(AddVue($video["id_video"], $_SESSION["id_utilisateur"])){
+         if(AddVue($video->id_video, $_SESSION["id_utilisateur"])){
          }
        } else {
          // Sinon utiliser l'user Anonymous (id : 0)
-         if(AddVue($video["id_video"], 0)){
+         if(AddVue($video->id_video, 0)){
          }
        }
        ?></p>
 
 
      <br><hr><br><h2 style="text-indent: 25px">
-      <?php echo $video["titre"]; ?></h2>
+      <?php echo $video->titre; ?></h2>
       <br>
      <hr>
      <br>
      <p><?php require_once("php/profil.php");
-       PrintProfil($video["id_utilisateur"]);
+       PrintProfil($auteur->id_utilisateur);
      ?></p>
      <hr>
      <?php if($_SESSION["auth"]){?>
@@ -95,7 +92,7 @@
    if($_SESSION["auth"])
      {
        #Si connecté
-            if(CheckLike($_SESSION["id_utilisateur"], $video["id_video"]))
+            if(CheckLike($_SESSION["id_utilisateur"], $video->id_video))
             {
               #Si déjà liké
               ?>
@@ -115,12 +112,12 @@
             }
      }
      ?>
-     <p><?php echo $video["description"];?></p>
+     <p><?php echo $video->description;?></p>
    </div>
 
    <div class="commentaires">
      <?php
-        CommentaireManager::PrintCommentaires($video["id_video"]);
+        CommentaireManager::PrintCommentaires($video->id_video);
       ?>
    </div>
 
