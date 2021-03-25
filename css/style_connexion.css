@@ -1,30 +1,57 @@
-.page_connexion
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+body
 {
-  background-color: #202020;
-  color:white;
-  text-align: center;
-}
-.connexion_area
-{
-  background-color: rgb(50,50,50);
-  border-bottom-right-radius : 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  box-shadow: 5px 5px 5px rgb(70,150,20);
+  background-color: rgb(38,38,38);
+  justify-content: center;
 }
 
-.inscription_area
+#btn_connexion
 {
-  background-color: rgb(50,50,50);
-  border-bottom-right-radius : 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  box-shadow: 5px 5px 5px rgb(70,150,20);
-  margin-left: 15%;
-  margin-right: 15%;
+  background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
+  border-radius: 50px;
+  color: white;
+  font-size: 40px;
+  border-style : none;
+  padding: 0px 20px 0px 20px;
+  border-color: rgba(0,0,0,0);
+  font-family: "Baloo 2";
 }
-.rangement
+
+.connexionarea
 {
-  padding:20px;
-  margin: 20px;
+  display: list-item;
+  background-color: red;
+}
+
+.inp_pseudo_conn
+{
+  background-color: rgb(25,25,25);
+  color:white;
+  font-size: 40px;
+  border-style: none;
+  border-radius: 50px;
+  font-family: "Baloo 2";
+  padding : 0px 30px 0px 30px;
+}
+.inp_pseudo_conn:focus
+{
+  outline: none;
+}
+
+
+.pwd
+{
+  background-color: rgb(25,25,25);
+  color:white;
+  font-size:40px;
+  border-style: none;
+  border-radius: 50px;
+  font-family: "Baloo 2";
+  padding : 0px 30px 0px 30px;
+}
+
+.pwd:focus
+{
+  outline: none;
 }
