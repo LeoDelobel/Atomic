@@ -21,7 +21,7 @@
       ?>
       <div class="search_video">
         <?php
-          printMiniature($video->id_video);
+          printMiniature($video);
           printProfil($video->id_utilisateur);
         ?>
 
