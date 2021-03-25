@@ -6,7 +6,7 @@
   include("header.php");
   include("php/init_sql.php");
   include_once("php/like.php");
-  require("php/commentaire.php");
+  require_once("php/class_commentaire.php");
  ?>
 <link rel="stylesheet" href="css/style_search.css"/>
 <link rel="stylesheet" href="css/style_commentaire.css"/>
@@ -27,10 +27,10 @@
 
       <?php
       if(isset($_POST["like"]))
-        {
-          AddLike($_SESSION["id_utilisateur"],$video["id_video"]);
-          header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
-        }
+      {
+        AddLike($_SESSION["id_utilisateur"],$video["id_video"]);
+        header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
+      }
       if(isset($_POST["unlike"]))
       {
         RemoveLike($_SESSION["id_utilisateur"],$video["id_video"]);
@@ -38,12 +38,12 @@
       }
       if(isset($_POST["commenter"]))
       {
-        AddCommentaire($video["id_video"], $_POST["message"]);
+        CommentaireManager::AddCommentaire($video["id_video"], $_SESSION["id_utilisateur"], $_POST["message"]);
         header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
       }
       if(isset($_POST["delete_com"]))
       {
-        RemoveCommentaire($_POST["id_commentaire"]);
+        CommentaireManager::RemoveCommentaire($_POST["id_commentaire"]);
         header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
       }
 
@@ -98,17 +98,20 @@
             if(CheckLike($_SESSION["id_utilisateur"], $video["id_video"]))
             {
               #Si déjà liké
-              echo'<form method="post" action="" >
-                     <input type="submit" name="unlike" value="J\'aime pas" style="color: black">
-                   </form>';
-
+              ?>
+              <form method="post" action="" >
+                <input type="submit" name="unlike" value="J\'aime pas" style="color: black">
+              </form>
+              <?php
             }
             else
             {
               #Pas liké
-              echo'<form method="post" action="" >
-                     <input type="submit" name="like" value="J\'aime" style="color: black">
-                   </form>';
+              ?>
+              <form method="post" action="" >
+                <input type="submit" name="like" value="J\'aime" style="color: black">
+              </form>
+              <?php
             }
      }
      ?>
@@ -117,8 +120,7 @@
 
    <div class="commentaires">
      <?php
-        require_once("php/liste_commentaires.php");
-        PrintCommentaires($video["id_video"]);
+        CommentaireManager::PrintCommentaires($video["id_video"]);
       ?>
    </div>
 
