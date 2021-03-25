@@ -22,7 +22,14 @@
             <a href="watch.php?id_video=<?php echo $video['id_video'] ?>">
             <img class="miniature_img" src="res/miniatures/<?php echo $video["id_video"] . '.' . $video["img_type"]?>">
             <p class="miniature_titre"> <?php echo $video["titre"] ?></p>
-            <p class="miniature_vues"> <?php echo GetVues($id_video) ?> vues</p>
+            <p class="miniature_vues"> <?php
+            $nb_vues = GetVues($id_video);
+            if($nb_vues == 1){
+              echo $nb_vues . " vue";
+            } else {
+              echo $nb_vues . " vues";
+            }
+            ?></p>
             <p class="miniature_auteur"> <?php echo $auteur["pseudonyme"] ?></p>
             </a>
           </div>
