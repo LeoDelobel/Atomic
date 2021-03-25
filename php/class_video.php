@@ -6,9 +6,10 @@
     public $date_publication;
     public $titre;
     public $description;
+    public $img_type;
 
     function __construct(
-      $id_video, $id_utilisateur, $id_categorie, $date_publication, $titre, $description
+      $id_video, $id_utilisateur, $id_categorie, $date_publication, $titre, $description, $img_type
     ){
       $this->id_video = $id_video;
       $this->id_utilisateur = $id_utilisateur;
@@ -16,6 +17,7 @@
       $this->date_publication = $date_publication;
       $this->titre = $titre;
       $this->description = $description;
+      $this->img_type = $img_type;
     }
   }
 
@@ -60,7 +62,8 @@
       $video['id_categorie'],
       $video['date_publication'],
       $video['titre'],
-      $video['description']);
+      $video['description'],
+      $video['img_type']);
     }
     static public function GetHaving($recherche){
       include("init_sql.php");
