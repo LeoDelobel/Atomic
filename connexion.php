@@ -30,10 +30,17 @@
     }  # erreur empty
   }
     ?>
-    <form method="POST" action="./connexion.php">
-            <input type="text" name="pseudo" class="inp_pseudo_conn"/>
+    <div class="hello">
+    <div class="fond_selecteur">
+      <a class="sel_connexion" href="#" onclick="connexion()" >Connexion</a>
+      <a class="sel_inscription" href="#" onclick="inscription()">Inscription</a>
+    </div>
+  </div>
+    <form method="POST" action="./connexion.php" class="connect_area">
 
-            <input type="password" name="pwd" class="pwd" />
+            <input type="text" name="pseudo" class="inp_pseudo_conn" placeholder="Nom d'utilisateur" required/>
+
+            <input type="password" name="pwd" class="pwd" placeholder="Mot de passe" required/>
 
             <input type="submit" name="btn_connexion" value="Se connecter" id="btn_connexion" />
     </form>
@@ -75,4 +82,30 @@
 
 
 </body>
+<script>
+
+function connexion()
+{
+  let radis = document.querySelector(".connect_area");
+  let sadiv = document.querySelector(".sel_inscription");
+  let ladiv = document.querySelector(".sel_connexion");
+  ladiv.style.background = "linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15))";
+  sadiv.style.background = "none";
+  radis.style.margin="auto";
+}
+
+function inscription()
+{
+  let radis = document.querySelector(".connect_area");
+  let sadiv = document.querySelector(".sel_inscription");
+  let ladiv = document.querySelector(".sel_connexion");
+  sadiv.style.background = "linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15))";
+  ladiv.style.background = "none";
+  radis.style.margin="200%";
+}
+
+
+
+
+</script>
 </html>
