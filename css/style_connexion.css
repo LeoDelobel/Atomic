@@ -20,7 +20,7 @@ body
   box-shadow: 7px 7px 7px black;
   height: 50px;
   font-size: 22px;
-  width: 50%;
+  width: 90%;
 }
 
 .inp_pseudo_conn
@@ -92,6 +92,8 @@ body
   text-align: center;
   padding: 30px 10px 30px 10px;
   margin-top: 25px;
+  border-style: solid;
+  border-color: black;
 }
 .insc_area
 {
@@ -113,6 +115,8 @@ body
   text-align: center;
   background-color: rgb(20, 20, 20);
   border-radius: 50px;
+  border-style: solid;
+  border-color: black;
 }
 
 .sel_connexion
@@ -158,9 +162,29 @@ body
   font-family: 'Baloo 2';
   margin-bottom: 20px;
   width: 90%;
-  background-color: rgb(51,171,21);
   border-style: none;
   border-radius: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.hello2
+{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  margin-top: 200px;
+}
+.erreur
+{
+  color:red;
+  margin: auto;
+  font-size:40px;
+  border-style: solid;
+  border-color: red;
+  border-radius: 50px;
+  font-family: "Baloo 2";
+  width: 90%;
   font-size: 20px;
   text-align: center;
 }
