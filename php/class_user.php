@@ -22,13 +22,13 @@
       return $statement; // On retourne vrai ou faux selon le succès de la commande
     }
 
-    static public function GetAbonnes($id_utilisateur){
+    static public function GetAbonnes($id_master){
       require("init_sql.php");
       $statement = $DATABASE->prepare("SELECT COUNT(id_master) AS nombre FROM abonner WHERE id_master = ?");
-      $statement->execute(array($id_utilisateur));
-      $compte = $statement->fetchAll()[0];
 
-      return $compte["nombre"];
+      $statement->execute(array($id_master));
+      $compte = $statement->fetchAll();
+      return $compte[0]["nombre"];
     }
 
     static public function CheckAbonnement($id_master, $id_slave){
@@ -130,7 +130,7 @@
         <img class="profil_img" src="res/profil/<?php echo $utilisateur->id_utilisateur?>.jpg">
         <div class="info">
           <p class="profil_pseudo"> <?php echo $utilisateur->pseudonyme ?></p>
-          <p class="profil_abonnes"> <?php echo AbonnementManager::GetAbonnes($utilisateur->$id_utilisateur) ?> abonnés</p>
+          <p class="profil_abonnes"> <?php echo AbonnementManager::GetAbonnes($utilisateur->id_utilisateur) ?> abonnés</p>
         </div>
       </div>
         <a href="php/validation.php?id_master=<?php echo $utilisateur->id_utilisateur?>">
