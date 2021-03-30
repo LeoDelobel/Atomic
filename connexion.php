@@ -45,15 +45,13 @@
             <input type="submit" name="btn_connexion" value="Se connecter" id="btn_connexion" />
     </form>
 <!--Inscription zone -->
-<!--
-    <div class="row">
-      <form method="POST" action="./connexion.php">
+      <form method="POST" action="./connexion.php" class="insc_area">
 
-            <input type="text" name="ins_pseudo" />
+            <input type="text" class="inp_pseudo_conn" name="ins_pseudo" placeholder="Nom d'utilisateur" required />
 
-            <input type="password" name="ins_pwd" />
+            <input type="password" name="ins_pwd" class="pwd" placeholder="Mot de passe" required/>
 
-            <input type="text" name="ins_mail" />
+            <input type="text" name="ins_mail" class="mail" placeholder="E-mail" required/>
 
             <input type="checkbox" name="ins_18" />
               <p>Je certifie que je suis agé·e·s de plus de 18 ans</p>
@@ -63,7 +61,7 @@
 
             <input type="submit" name="btn_inscription" value="S'incrire" id="btn_inscription"/>
           </form>
--->
+
       <?php
         if(isset($_POST['ins_pseudo']) && isset($_POST['ins_pwd']) && isset($_POST['ins_mail']))
         {
@@ -84,29 +82,38 @@
 </body>
 <script>
 
-function connexion()
-{
-  let radis = document.querySelector(".connect_area");
-  let sadiv = document.querySelector(".sel_inscription");
-  let ladiv = document.querySelector(".sel_connexion");
-  ladiv.style.background = "linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15))";
-  sadiv.style.background = "none";
-  radis.style.margin="auto";
-}
-
 function inscription()
 {
-  let radis = document.querySelector(".connect_area");
-  let sadiv = document.querySelector(".sel_inscription");
-  let ladiv = document.querySelector(".sel_connexion");
-  sadiv.style.background = "linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15))";
-  ladiv.style.background = "none";
-  radis.style.margin="200%";
+  let connect_area = document.querySelector(".connect_area");
+  let sel_inscription = document.querySelector(".sel_inscription");
+  let sel_connexion = document.querySelector(".sel_connexion");
+  let insc_area = document.querySelector(".insc_area");
+  sel_inscription.style.background = "linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15))";
+  sel_connexion.style.background = "none";
+
+  insc_area.style.display = "block";
+  connect_area.style.display = "none";
+
+}
+
+function connexion()
+{
+  let connect_area = document.querySelector(".connect_area");
+  let sel_inscription = document.querySelector(".sel_inscription");
+  let sel_connexion = document.querySelector(".sel_connexion");
+  let insc_area = document.querySelector(".insc_area");
+  sel_connexion.style.background = "linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15))";
+  sel_inscription.style.background = "none";
+
+  insc_area.style.display="none";
+  connect_area.style.display="block";
+
+
 }
 
 function problem()
 {
-  
+
 }
 
 
