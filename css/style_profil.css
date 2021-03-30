@@ -31,6 +31,12 @@
 
 }
 
+.profil_pseudo:hover
+{
+    transition: 0.5 ease;
+    text-shadow: white 1px 0 10px;
+}
+
 .profil_img
 {
   width: 75px;

@@ -149,7 +149,9 @@
         <div class="orga">
         <img class="profil_img" src="res/profil/<?php echo $utilisateur->id_utilisateur?>.jpg">
         <div class="info">
-          <p class="profil_pseudo"> <?php echo $utilisateur->pseudonyme ?></p>
+          <a href="../user.php?u=<?php echo $utilisateur->pseudonyme ?>">
+            <p class="profil_pseudo"> <?php echo $utilisateur->pseudonyme ?></p>
+          </a>
           <p class="profil_abonnes"> <?php echo AbonnementManager::GetAbonnes($utilisateur->id_utilisateur) ?> abonnés</p>
         </div>
       </div>

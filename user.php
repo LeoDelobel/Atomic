@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="css/style_index.css"/>
+<link rel="stylesheet" href="css/style_user.css"/>
 
 <?php
   session_start();
