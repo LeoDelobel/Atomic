@@ -170,7 +170,7 @@
 
       include("init_sql.php");
 
-      $statement = $DATABASE->prepare("SELECT id_video FROM video WHERE id_utilisateur = ? GROUP BY id_utilisateur ORDER BY date_publication DESC LIMIT 5");
+      $statement = $DATABASE->prepare("SELECT id_video FROM video WHERE id_utilisateur = ? ORDER BY date_publication DESC LIMIT 5");
       $statement->execute(array($id_utilisateur));
 
       $liste_id = $statement->fetchAll();
