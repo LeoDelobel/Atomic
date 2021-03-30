@@ -91,7 +91,7 @@
    if($_SESSION["auth"])
      {
        #Si connecté
-            if(CheckLike($_SESSION["id_utilisateur"], $video->id_video))
+            if(LikeManager::CheckLike($_SESSION["id_utilisateur"], $video->id_video))
             {
               #Si déjà liké
               ?>
