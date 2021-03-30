@@ -56,6 +56,7 @@
       # On retourne directement un objet vidéo
       // ------------ A FAIRE -----------
       // On remercie l'auteur de la ligne précédente qui avait tout oublié depuis
+      // Merci monseigneur
 
       return new Video($video['id_video'],
       $video['id_utilisateur'],
