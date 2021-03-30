@@ -34,7 +34,7 @@
                       ?>
 
                       <div class="profilbackground">
-                        <a class="pseudo" href="profil.php"><?php echo $_SESSION["pseudonyme"] ?></a>
+                        <a class="pseudo" href="user.php?u=<?php echo $_SESSION["pseudonyme"] ?>"><?php echo $_SESSION["pseudonyme"] ?></a>
                         <form class="helo" action="php/disconnect.php" method="POST"><button class="disconnect">Déconnexion</button></form>
                       </div>
 <?php

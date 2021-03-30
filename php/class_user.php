@@ -48,7 +48,6 @@
       $statement = $DATABASE->prepare("INSERT INTO abonner (id_master, id_slave) VALUES (?, ?)");
       $statement->execute(array($id_master,$id_slave));
       $arr = $statement->errorInfo();
-      print_r($arr);
 
       return $statement;
     }
@@ -106,6 +105,27 @@
 
       if(isset($compte)){
         # Le compte existe (L'id est valide)
+
+        # On rend un objet utilisateur avec toutes ses données
+          return new User(
+            $compte["id_utilisateur"],
+            $compte["id_role"],
+            $compte["pseudonyme"],
+            $compte["mail"]);
+      } else {
+        # Le compte n'existe pas
+        return false;
+      }
+    }
+    static public function FindUserByName($pseudonyme){
+      session_start();
+      require("init_sql.php");
+      $statement = $DATABASE->prepare("SELECT * FROM utilisateur WHERE pseudonyme = ?");
+      $statement->execute(array($pseudonyme));
+      $compte = $statement->fetchAll()[0];
+
+      if(isset($compte)){
+        # Le compte existe (Le pseudo est valide)
 
         # On rend un objet utilisateur avec toutes ses données
           return new User(
