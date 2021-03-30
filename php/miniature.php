@@ -4,8 +4,8 @@
 # Author      : Léo Delobel
     function printMiniature($video){
       // LA FONCTION NE PREND QUE DES OBJETS VIDEO !
-      require_once("vues.php");
       require_once("class_user.php");
+      require_once("class_video.php");
 
       // On retrouve l'auteur
       $auteur = UserManager::FindUser($video->$id_utilisateur);
@@ -17,7 +17,7 @@
             <img class="miniature_img" src="res/miniatures/<?php echo $video->id_video . '.' . $video->img_type ?>">
             <p class="miniature_titre"> <?php echo $video->titre ?></p>
             <p class="miniature_vues"> <?php
-            $nb_vues = GetVues($video->id_video);
+            $nb_vues = VueManager::GetVues($video->id_video);
             if($nb_vues == 1){
               echo $nb_vues . " vue";
             } else {

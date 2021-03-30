@@ -5,7 +5,6 @@
 # URL         : http://176.166.235.56/watch.php
   include("header.php");
   include("php/init_sql.php");
-  include_once("php/like.php");
   require_once("php/class_commentaire.php");
   require_once("php/class_user.php");
   require_once("php/class_video.php");
@@ -56,18 +55,16 @@
    <div class="video-meta">
      <p>
        <?php
-       require("php/vues.php");
-       require_once("php/like.php");
-       echo GetVues($video->id_video) . ' vues  •  ';
+       echo VueManager::GetVues($video->id_video) . ' vues  •  ';
        echo $video->date_publication . '  •  👍';
-       echo GetLikes($video->id_video);
+       echo LikeManager::GetLikes($video->id_video);
        if($_SESSION["auth"]){
          // Si l'utilisateur est connecté, il a un id utilisateur à ajouter
          if(AddVue($video->id_video, $_SESSION["id_utilisateur"])){
          }
        } else {
          // Sinon utiliser l'user Anonymous (id : 0)
-         if(AddVue($video->id_video, 0)){
+         if(VueManager::AddVue($video->id_video, 0)){
          }
        }
        ?></p>

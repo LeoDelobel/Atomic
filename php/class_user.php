@@ -125,8 +125,6 @@
       // La fonction ne prend que des objets Utilisateur !
 
       // $utilisateur = UserManager::FindUser($id_utilisateur); -- OBSOLETE
-
-      require_once("abonnes.php");
       ?>
 
       <div class="profil">
@@ -134,15 +132,14 @@
         <img class="profil_img" src="res/profil/<?php echo $utilisateur->id_utilisateur?>.jpg">
         <div class="info">
           <p class="profil_pseudo"> <?php echo $utilisateur->pseudonyme ?></p>
-          <p class="profil_abonnes"> <?php echo GetAbonnes($id_utilisateur) ?> abonnés</p>
+          <p class="profil_abonnes"> <?php echo AbonnementManager::GetAbonnes($id_utilisateur) ?> abonnés</p>
         </div>
       </div>
         <a href="php/validation.php?id_master=<?php echo $utilisateur->id_utilisateur?>">
           <?php
-          require_once("abonnes.php");
           if($_SESSION["auth"]){
                 // Si l'utilisateur est connecté
-              if(CheckAbonnement($utilisateur->id_utilisateur, $_SESSION["id_utilisateur"])){ ?>
+              if(AbonnementManager::CheckAbonnement($utilisateur->id_utilisateur, $_SESSION["id_utilisateur"])){ ?>
               <input class="abonnement_button_y" type="submit" name="abonnement" value="Abonné">
             <?php } else {
               ?>
