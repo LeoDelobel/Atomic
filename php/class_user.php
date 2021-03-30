@@ -43,9 +43,7 @@
       return ($abonnement["nombre"] > 0); // On retourne vrai si l'utilisateur est abonnée
     }
 
-
-    static public function AddAbonnement($id_master,$id_slave)
-    {
+    static public function AddAbonnement($id_master,$id_slave){
       require("init_sql.php");
       $statement = $DATABASE->prepare("INSERT INTO abonner (id_master, id_slave) VALUES (?, ?)");
       $statement->execute(array($id_master,$id_slave));
@@ -132,7 +130,7 @@
         <img class="profil_img" src="res/profil/<?php echo $utilisateur->id_utilisateur?>.jpg">
         <div class="info">
           <p class="profil_pseudo"> <?php echo $utilisateur->pseudonyme ?></p>
-          <p class="profil_abonnes"> <?php echo AbonnementManager::GetAbonnes($id_utilisateur) ?> abonnés</p>
+          <p class="profil_abonnes"> <?php echo AbonnementManager::GetAbonnes($utilisateur->$id_utilisateur) ?> abonnés</p>
         </div>
       </div>
         <a href="php/validation.php?id_master=<?php echo $utilisateur->id_utilisateur?>">
