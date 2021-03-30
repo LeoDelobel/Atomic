@@ -18,11 +18,11 @@
     <!-- On inclut le header -->
     <?php require 'header.php';?>
     <!-- -->
-    <h2>- Vidéos récentes -</h2>
+    <h2>Vidéos récentes</h2>
   <?php
     VideoManager::PrintVideos(VideoManager::GetRecentVideos());
   ?>
-    <h2>- Vidéos populaires -</h2>
+    <h2>Vidéos populaires</h2>
   <?php
     VideoManager::PrintVideos(VideoManager::GetMostPopularVideos());
   ?>
