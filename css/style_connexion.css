@@ -105,6 +105,8 @@ body
   padding: 30px 10px 30px 10px;
   margin-top: 25px;
   display: none;
+  border-style: solid;
+  border-color: black;
 }
 
 .fond_selecteur
