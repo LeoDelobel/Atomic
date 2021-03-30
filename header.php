@@ -21,8 +21,7 @@
         if($_SESSION['auth']){
           ?>
           <div class="header_list_buttons">
-            <button class="header_button"><a href="ajout_video.php"><img src="upload.png" /></a></button>
-            <button class="header_button"><a href="ajout_video.php"><img src="cloche.png" /></a></button>
+
           </div>
           <?php
       }
@@ -35,15 +34,16 @@
 
                       <div class="profilbackground">
                         <a class="pseudo" href="profil.php"><?php echo $_SESSION["pseudonyme"] ?></a>
+                        <button class="header_button"><a href="ajout_video.php"><img src="upload.png" /></a></button>
+                        <button class="header_button"><a href="ajout_video.php"><img src="cloche.png" /></a></button>
+
                         <form class="helo" action="php/disconnect.php" method="POST"><button class="disconnect">Déconnexion</button></form>
                       </div>
 <?php
                     } else {
                       ?>
                       <div class="profilbackground_connexion">
-                      <a href="connexion.php">
-                        <button class="connexion">Se connecter</button>
-                      </a>
+                        <a href="connexion.php"><button class="connexion">Se connecter</button></a>
                       </div>
 <?php
                     }
