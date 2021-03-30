@@ -119,6 +119,26 @@
       return $resultat;
     }
 
+    static public function GetByUser($id_utilisateur){
+      // Demande les 5 dernières vidéos postées par l'utilisateur
+
+      include("init_sql.php");
+
+      $statement = $DATABASE->prepare("SELECT id_video FROM video WHERE id_utilisateur = ? GROUP BY id_utilisateur ORDER BY date_publication DESC LIMIT 5");
+      $statement->execute(array($id_utilisateur));
+
+      $liste_id = $statement->fetchAll();
+
+      // On va transformer les id en objets Video
+      $resultat = array();
+      foreach($liste_id as $id){
+        array_push($resultat, VideoManager::GetById($id["id_video"]));
+      }
+
+      // On peut alors envoyer le tableau dans PrintVideos
+      return $resultat;
+    }
+
     static public function PrintVideos($liste){
       // Fait une liste de miniatures basée sur une liste d'objets Video
       // On commence la liste des vidéos
