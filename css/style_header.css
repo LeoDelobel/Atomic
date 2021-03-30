@@ -33,7 +33,7 @@ a
 #search_bar
 {
   width : calc(100% - 130px);
-  border-radius: 30px;
+  border-radius: 30px 30px 30px 0px;
   border-style: none;
   height : 50px;
   color: red;
@@ -51,7 +51,7 @@ a
 #search_button
 {
   color : white;
-  border-radius: 30px;
+  border-radius: 30px 30px 30px 0px;
   border-style: none;
   height : 40px;
   background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
@@ -101,7 +101,6 @@ a
 {
   background-color : rgb(100,100,100);
   min-width: 150px;
-  width: 20%;
   height: 50px;
   border-radius: 30px;
   box-shadow: 7px 7px 7px rgb(50,50,50);
@@ -116,10 +115,9 @@ a
 .profilbackground_connexion
 {
   background-color : rgb(100,100,100);
-  width: 150px;
+  width: auto;
   height: 50px;
-  margin : 30px;
-  border-radius: 30px;
+  border-radius: 30px 30px 30px 0px;
   box-shadow: 7px 7px 7px rgb(50,50,50);
   display: flex;
   align-items: center;
@@ -127,6 +125,7 @@ a
   color : white;
   font-family: 'Baloo 2';
   font-size: 22px;
+  margin: 0px 10px 0px 10px;
 }
 
 .header_button
@@ -151,12 +150,13 @@ a
 {
   color : white;
   padding: 0px 15px 0px 15px;
-  border-radius: 30px;
+  border-radius: 30px 30px 30px 0px;
   border-style: none;
   height : 40px;
   background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
   font-family: 'Baloo 2';
   font-size: 22px;
+  margin: 0 5px 0 0;
 }
 
 
@@ -167,17 +167,16 @@ a
 
 .connexion
 {
-  border: none;
-  margin: 10px 0px 10px 0px;
-  padding : 3px 10px 0px 10px;
   color : white;
   border-radius: 30px;
-  height : 40px;
-  background-color: rgba(0,0,0,0);
+  border-style: none;
+  height : 50px;
+  background-color: rgb(100,100,100);
+  width: auto;
   font-family: 'Baloo 2';
   font-size: 22px;
-  width: 100%;
-  transition: 1s;
+  outline : none;
+  padding: 0px 20px 0px 20px
 }
 
 .connexion:focus
