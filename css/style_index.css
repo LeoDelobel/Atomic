@@ -74,8 +74,11 @@ body{
 }
 
 h2{
-  color: black;
+  color: white;
   text-indent: 15%;
+  font-style: 20px;
+  font-family:'Baloo 2';
+  font-weight: normal;
 }
 
 .liste_videos{
