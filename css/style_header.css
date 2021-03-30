@@ -103,9 +103,6 @@ a
   min-width: 150px;
   width: 20%;
   height: 50px;
-  padding: 0px;
-  margin : 30px;
-  padding-right: 5px;
   border-radius: 30px;
   box-shadow: 7px 7px 7px rgb(50,50,50);
   display: flex;
@@ -114,7 +111,6 @@ a
   color : white;
   font-family: 'Baloo 2';
   font-size: 22px;
-  padding: 0px 10px 0px 10px;
 }
 
 .profilbackground_connexion
@@ -122,9 +118,7 @@ a
   background-color : rgb(100,100,100);
   width: 150px;
   height: 50px;
-  padding: 0px;
   margin : 30px;
-  padding-right: 5px;
   border-radius: 30px;
   box-shadow: 7px 7px 7px rgb(50,50,50);
   display: flex;
@@ -133,7 +127,6 @@ a
   color : white;
   font-family: 'Baloo 2';
   font-size: 22px;
-  padding: 0px 10px 0px 10px;
 }
 
 .header_button
