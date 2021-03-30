@@ -7,7 +7,7 @@ body
   overflow-y: hidden;
 }
 
-#btn_connexion
+#btn_connexion, #btn_inscription
 {
   background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
   border-radius: 50px;
@@ -22,7 +22,6 @@ body
   font-size: 22px;
   width: 50%;
 }
-
 
 .inp_pseudo_conn
 {
@@ -43,7 +42,25 @@ body
 {
   outline: none;
 }
-
+.mail
+{
+  background-color: white;
+  color:black;
+  font-size: 40px;
+  border-style: none;
+  border-radius: 50px;
+  font-family: "Baloo 2";
+  padding : 0px 30px 0px 30px;
+  box-shadow: 7px 7px 7px black;
+  width: 90%;
+  height: 50px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.mail:focus
+{
+  outline: none;
+}
 
 .pwd
 {
@@ -97,6 +114,7 @@ body
   background-color: rgb(20, 20, 20);
   border-radius: 50px;
 }
+
 .sel_connexion
 {
   font-family: "Baloo 2";
@@ -130,4 +148,19 @@ body
   text-align: center;
   padding: 30px 10px 30px 10px;
   margin-top: 50px;
+}
+
+.btn_ins18, .ins_conditionsgene
+{
+  border-color : rgb(51,171,21);
+  border-width: 1px;
+  border-style: solid;
+  font-family: 'Baloo 2';
+  margin-bottom: 20px;
+  width: 90%;
+  background-color: rgb(51,171,21);
+  border-style: none;
+  border-radius: 50px;
+  font-size: 20px;
+  text-align: center;
 }

@@ -25,6 +25,7 @@
         } else {
           # Afficher le message d'Erreur
           echo 'Erreur de connexion';
+          echo "<script> problem(); </script>";
         }
       } # erreur empty
     }  # erreur empty
@@ -53,13 +54,7 @@
 
             <input type="text" name="ins_mail" class="mail" placeholder="E-mail" required/>
 
-            <input type="checkbox" name="ins_18" />
-              <p>Je certifie que je suis agé·e·s de plus de 18 ans</p>
-
-            <input type="checkbox" name="ins_conditionsgene" />
-              <p>Je certifie avoir lu les <a>Conditions général d'utilisation</a> du site Atomic vidéo</p>
-
-            <input type="submit" name="btn_inscription" value="S'incrire" id="btn_inscription"/>
+            <input type="submit" name="btn_inscription" value="S'inscrire" id="btn_inscription"/>
           </form>
 
       <?php
@@ -113,7 +108,7 @@ function connexion()
 
 function problem()
 {
-
+  alert("hellox2");
 }
 
 
