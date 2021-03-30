@@ -18,6 +18,9 @@
     if($_SESSION["auth"] && $_SESSION["id_utilisateur"] == $user->id_utilisateur){
    ?>
 
+   <hr>
+   <h2>Informations personnelles : </h2>
+
   <div class="user_meta">
     <h3>Mail : <?php echo $user->mail ?></h3>
     <form action="" method="post">
