@@ -60,7 +60,7 @@
        echo LikeManager::GetLikes($video->id_video);
        if($_SESSION["auth"]){
          // Si l'utilisateur est connecté, il a un id utilisateur à ajouter
-         if(AddVue($video->id_video, $_SESSION["id_utilisateur"])){
+         if(VueManager::AddVue($video->id_video, $_SESSION["id_utilisateur"])){
          }
        } else {
          // Sinon utiliser l'user Anonymous (id : 0)
