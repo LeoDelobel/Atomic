@@ -42,6 +42,11 @@ a
   color: black;
   text-indent: 15px;
 }
+#search_bar:focus
+{
+  outline:none;
+}
+
 
 #search_button
 {
