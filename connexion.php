@@ -24,7 +24,10 @@
           # Si la fonction renvoie true
         } else {
           # Afficher le message d'Erreur
-          echo 'Erreur de connexion';
+          echo'
+            <div class="erreur">
+            <p>Vos informations sont éronnés, veuillez réessayer.</p>
+            </div>';
         }
       } # erreur empty
     }  # erreur empty
@@ -55,11 +58,6 @@
 
             <input type="submit" name="btn_inscription" value="S'inscrire" id="btn_inscription"/>
           </form>
-<div class="hello2">
-<div class="erreur">
-  <p>Vos informations sont éronnés, veuillez réessayer.</p>
-<div>
-</div>
 
       <?php
         if(isset($_POST['ins_pseudo']) && isset($_POST['ins_pwd']) && isset($_POST['ins_mail']))
@@ -112,8 +110,8 @@ function connexion()
 
 function problem()
 {
-  let connect_area = document.querySelector(".connect_area");
-  connect_area.style.box-shadow = "7px 7px 7px black;"
+  let hello2 = document.querySelector(".hello2");
+  hello2.style.display = "none";
 }
 
 

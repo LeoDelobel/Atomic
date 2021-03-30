@@ -110,7 +110,7 @@ body
 .fond_selecteur
 {
   display: inline-flex;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: auto;
   text-align: center;
   background-color: rgb(20, 20, 20);
@@ -168,23 +168,16 @@ body
   text-align: center;
 }
 
-.hello2
-{
-  width: 100%;
-  margin: auto;
-  text-align: center;
-  margin-top: 200px;
-}
 .erreur
 {
   color:red;
-  margin: auto;
+  margin: 20px auto 0px auto;
   font-size:40px;
   border-style: solid;
   border-color: red;
   border-radius: 50px;
   font-family: "Baloo 2";
-  width: 90%;
+  width: 40%;
   font-size: 20px;
   text-align: center;
 }
