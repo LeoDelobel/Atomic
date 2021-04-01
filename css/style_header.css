@@ -154,9 +154,14 @@ a
   font-family: 'Baloo 2';
   font-size: 22px;
   margin: 0 5px 0 0;
+  transition: 1s ease;
 }
 
-
+.disconnect:hover
+{
+  background: linear-gradient(0.25turn, rgb(255, 0, 0), rgb(163, 0, 0));
+  transition: 1s ease;
+}
 .disconnect:focus
 {
   outline: none;

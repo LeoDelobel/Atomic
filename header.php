@@ -20,9 +20,6 @@
       require_once("php/class_user.php");
         if($_SESSION['auth']){
           ?>
-          <div class="header_list_buttons">
-
-          </div>
           <?php
       }
 
