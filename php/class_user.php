@@ -48,7 +48,6 @@
       $statement = $DATABASE->prepare("INSERT INTO abonner (id_master, id_slave) VALUES (?, ?)");
       $statement->execute(array($id_master,$id_slave));
       $arr = $statement->errorInfo();
-      print_r($arr);
 
       return $statement;
     }
@@ -118,6 +117,27 @@
         return false;
       }
     }
+    static public function FindUserByName($pseudonyme){
+      session_start();
+      require("init_sql.php");
+      $statement = $DATABASE->prepare("SELECT * FROM utilisateur WHERE pseudonyme = ?");
+      $statement->execute(array($pseudonyme));
+      $compte = $statement->fetchAll()[0];
+
+      if(isset($compte)){
+        # Le compte existe (Le pseudo est valide)
+
+        # On rend un objet utilisateur avec toutes ses données
+          return new User(
+            $compte["id_utilisateur"],
+            $compte["id_role"],
+            $compte["pseudonyme"],
+            $compte["mail"]);
+      } else {
+        # Le compte n'existe pas
+        return false;
+      }
+    }
 
     static public function PrintProfil($utilisateur){
       // La fonction ne prend que des objets Utilisateur !
@@ -129,7 +149,9 @@
         <div class="orga">
         <img class="profil_img" src="res/profil/<?php echo $utilisateur->id_utilisateur?>.jpg">
         <div class="info">
-          <p class="profil_pseudo"> <?php echo $utilisateur->pseudonyme ?></p>
+          <a href="../user.php?u=<?php echo $utilisateur->pseudonyme ?>">
+            <p class="profil_pseudo"> <?php echo $utilisateur->pseudonyme ?></p>
+          </a>
           <p class="profil_abonnes"> <?php echo AbonnementManager::GetAbonnes($utilisateur->id_utilisateur) ?> abonnés</p>
         </div>
       </div>
