@@ -31,9 +31,6 @@
 
                       <div class="profilbackground">
                         <a class="pseudo" href="user.php?u=<?php echo $_SESSION["pseudonyme"] ?>"><?php echo $_SESSION["pseudonyme"] ?></a>
-                        <button class="header_button"><a href="ajout_video.php"><img src="upload.png" /></a></button>
-                        <button class="header_button"><a href="ajout_video.php"><img src="cloche.png" /></a></button>
-
                         <form class="helo" action="php/disconnect.php" method="POST"><button class="disconnect">Déconnexion</button></form>
                       </div>
 <?php
@@ -45,6 +42,10 @@
 <?php
                     }
                   ?>
-      </div>
 
+
+      </div>
+      <p>Hello.pute</p>
     </div>
+    <!--<button class="header_button"><a href="ajout_video.php"><img src="upload.png" /></a></button>
+    <button class="header_button"><a href="ajout_video.php"><img src="cloche.png" /></a></button>-->
