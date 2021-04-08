@@ -45,7 +45,6 @@
 
 
       </div>
-      <p>Hello.pute</p>
     </div>
     <!--<button class="header_button"><a href="ajout_video.php"><img src="upload.png" /></a></button>
     <button class="header_button"><a href="ajout_video.php"><img src="cloche.png" /></a></button>-->

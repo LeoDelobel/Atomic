@@ -1,6 +1,11 @@
 <link rel="stylesheet" href="css/style_index.css"/>
 <link rel="stylesheet" href="css/style_user.css"/>
 
+
+
+
+
+
 <?php
   session_start();
   require_once("php/class_user.php");
@@ -9,6 +14,11 @@
 
   $user = UserManager::FindUserByName(htmlspecialchars($_GET["u"]));
   ?>
+  <div class="userdiv">
+    Pseudo
+  </div>
+
+
 
   <div class="user_banniere">
     <h1 class="user_pseudonyme"><?php echo $user->pseudonyme ?></h1>
