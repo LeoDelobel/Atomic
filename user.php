@@ -14,26 +14,23 @@
 
   $user = UserManager::FindUserByName(htmlspecialchars($_GET["u"]));
   ?>
-  <div class="userdiv">
-    Pseudo
+
+<div class="test">
+  <div class="field">
+    <div class="user_pseudonyme"><?php echo $user->pseudonyme ?></div>
   </div>
 
-
-
-  <div class="user_banniere">
-    <h1 class="user_pseudonyme"><?php echo $user->pseudonyme ?></h1>
+  <div class="field">
+    <div class="title_users">Statistique</div>
   </div>
+</div>
 
   <?php
     // On affiche les infos confidentielles si il s'agit de l'user connecté
     if($_SESSION["auth"] && $_SESSION["id_utilisateur"] == $user->id_utilisateur){
    ?>
-
-   <hr>
-   <h2>Informations personnelles : </h2>
-
   <div class="user_meta">
-    <h3>Mail : <?php echo $user->mail ?></h3>
+    <div>Mail : <?php echo $user->mail ?></div>
     <form action="" method="post">
       <input type="submit" name="change_pass" value="Changer de mot de passe"></input>
     </form>
@@ -41,12 +38,10 @@
       <input type="submit" name="change_mail" value="Changer d'adresse mail"></input>
     </form>
   </div>
-
   <?php
     }
   ?>
 
-  <hr>
   <h2>Dernières vidéos :</h2>
 
   <?php
