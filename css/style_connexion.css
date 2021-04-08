@@ -23,6 +23,10 @@ body
   width: 90%;
 }
 
+#btn_connexion, #btn_inscription
+{
+  outline: none;
+}
 .inp_pseudo_conn
 {
   background-color: white;
@@ -153,20 +157,6 @@ body
   text-align: center;
   padding: 30px 10px 30px 10px;
   margin-top: 50px;
-}
-
-.btn_ins18, .ins_conditionsgene
-{
-  border-color : rgb(51,171,21);
-  border-width: 1px;
-  border-style: solid;
-  font-family: 'Baloo 2';
-  margin-bottom: 20px;
-  width: 90%;
-  border-style: none;
-  border-radius: 50px;
-  font-size: 20px;
-  text-align: center;
 }
 
 .erreur
