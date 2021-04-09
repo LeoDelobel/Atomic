@@ -158,12 +158,6 @@ a
   transition: 1s ease;
   width: calc(90%-10px);
 }
-
-.disconnect:hover
-{
-  background: linear-gradient(0.25turn, rgb(255, 0, 0), rgb(163, 0, 0));
-  transition: 1s ease;
-}
 .disconnect:focus
 {
   outline: none;

@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="css/style_index.css"/>
 <link rel="stylesheet" href="css/style_user.css"/>
 
 
@@ -17,12 +16,19 @@
 
 <div class="test">
   <div class="field">
-    <div class="user_pseudonyme"><?php echo $user->pseudonyme ?></div>
+    <div class="user_pseudonyme"><?php echo $user->pseudonyme ?>
+
+
+      <form class="helo" action="php/disconnect.php" method="POST"><button class="button">Changer de compte</button></form>
+    </div>
   </div>
 
   <div class="field">
     <div class="title_users">Statistique</div>
   </div>
+</div>
+<div class="last_upload">
+  <div class="field1">Hello<div>
 </div>
 
   <?php
