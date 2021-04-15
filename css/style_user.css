@@ -7,6 +7,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
 
+.conteneur
+{
+  display: inline-flex;
+}
 .field{
   background-color: rgb(20, 20, 20);
   border-radius: 50px 50px 50px 0px;
@@ -41,7 +45,6 @@
 }
 .user_pseudonyme{
   font-family: 'Baloo 2';
-  text-transform: capitalize;
 }
 
 .admin_connect
@@ -57,4 +60,12 @@
 }
 .last_upload
 {
+}
+
+.user_meta
+{
+  background: linear-gradient(0.25turn, rgb(51,171,21), rgb(27, 135, 15));
+  width: 40%;
+  border-radius: 50px 50px 50px 0px;
+  padding : 10px;
 }

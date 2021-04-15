@@ -19,7 +19,32 @@
     <div class="user_pseudonyme"><?php echo $user->pseudonyme ?>
 
 
-      <form class="helo" action="php/disconnect.php" method="POST"><button class="button">Changer de compte</button></form>
+        <?php
+          // On affiche les infos confidentielles si il s'agit de l'user connecté
+          if($_SESSION["auth"] && $_SESSION["id_utilisateur"] == $user->id_utilisateur){
+         ?>
+        <div class="user_meta">
+          <div>Mes informations</div>
+          <div class="conteneur">
+            <div><?php echo $user->mail ?></div>
+          <form action="" method="post">
+            <input type="submit" name="change_mail" value="Modifier"></input>
+          </form>
+        </div>
+
+
+        <div class="conteneur">
+          <form action="" method="post">
+            <input type="submit" name="change_pass" value="Modifier"></input>
+          </form>
+        </div>
+
+          <form class="helo" action="php/disconnect.php" method="POST"><button class="button">Changer de compte</button></form>
+        </div>
+        <?php
+          }
+        ?>
+
     </div>
   </div>
 
@@ -28,27 +53,11 @@
   </div>
 </div>
 <div class="last_upload">
-  <div class="field1">Hello<div>
+  <div class="field1">Dernières vidéos :<div>
 </div>
 
-  <?php
-    // On affiche les infos confidentielles si il s'agit de l'user connecté
-    if($_SESSION["auth"] && $_SESSION["id_utilisateur"] == $user->id_utilisateur){
-   ?>
-  <div class="user_meta">
-    <div>Mail : <?php echo $user->mail ?></div>
-    <form action="" method="post">
-      <input type="submit" name="change_pass" value="Changer de mot de passe"></input>
-    </form>
-    <form action="" method="post">
-      <input type="submit" name="change_mail" value="Changer d'adresse mail"></input>
-    </form>
-  </div>
-  <?php
-    }
-  ?>
 
-  <h2>Dernières vidéos :</h2>
+
 
   <?php
     VideoManager::PrintVideos(VideoManager::GetByUser($user->id_utilisateur));

@@ -37,7 +37,7 @@
                     } else {
                       ?>
                       <div class="profilbackground_connexion">
-                        <a href="connexion.php" class="buttonconnect"><button class="connexion">Se connecter</button></a>
+                        <a href="connexion.php" class="buttonconnect"><img class="connect" src="connect.png"/><button class="connexion">Se connecter</button></a>
                       </div>
 <?php
                     }
