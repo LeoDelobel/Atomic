@@ -14,17 +14,24 @@
   $user = UserManager::FindUserByName(htmlspecialchars($_GET["u"]));
   ?>
 
-<div class="test">
+
   <div class="field">
-    <div class="user_pseudonyme"><?php echo $user->pseudonyme ?>
+    <div class="user_pseudonyme"><?php echo $user->pseudonyme ?></div>
+    <div class="orgapls">
 
+      <div class="stat">
+        <span><p>Nombre d'abonné·e·s : </p></span>
+        <span><p>Nombre d'abonnement·s : </p></span>
+        <span><p>Nombre de vues cumulé·s : </p></span>
+        <span><p>Nombre de vidéo publié·e·s : </p></span>
+      </div>
 
-        <?php
-          // On affiche les infos confidentielles si il s'agit de l'user connecté
-          if($_SESSION["auth"] && $_SESSION["id_utilisateur"] == $user->id_utilisateur){
-         ?>
-        <div class="user_meta">
-          <div>Mes informations</div>
+      <?php
+        // On affiche les infos confidentielles si il s'agit de l'user connecté
+        if($_SESSION["auth"] && $_SESSION["id_utilisateur"] == $user->id_utilisateur){
+      ?>
+      <div class="user_meta">
+        <div>Mes informations</div>
           <div class="conteneur">
             <div><?php echo $user->mail ?></div>
           <form action="" method="post">
@@ -46,11 +53,7 @@
         ?>
 
     </div>
-  </div>
-
-  <div class="field">
-    <div class="title_users">Statistique</div>
-  </div>
+    </div>
 </div>
 <div class="last_upload">
   <div class="field1">Dernières vidéos :<div>
