@@ -11,11 +11,6 @@ require 'header.php';
 require_once("php/class_categorie.php");
 require_once("php/class_video.php");
 
-function getType($name) {
-    $split = explode('.',$name);
-    return strtolower($split[count($split) - 1]);
-}
-
 if(isset($_POST["ajout"])){
   // Demande d'ajout de vidéo
   $dir_miniatures = "/var/www/atomic/res/miniatures/";
@@ -56,11 +51,7 @@ if(isset($_POST["ajout"])){
         } else {
           // Si ca ne marche pas, on supprime la vidéo
           VideoManager::RemoveVideo($SQL["id_video"]);
-          print_r($_FILES);
         }
-      } else {
-        print_r($_SQL);
-        print_r($_FILES);
       }
   }
 }
