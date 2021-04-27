@@ -31,6 +31,15 @@
       return $compte[0]["nombre"];
     }
 
+    static public function GetAbonnements($id_master){
+      require("init_sql.php");
+      $statement = $DATABASE->prepare("SELECT COUNT(id_master) AS nombre FROM abonner WHERE id_slave = ?");
+
+      $statement->execute(array($id_master));
+      $compte = $statement->fetchAll();
+      return $compte[0]["nombre"];
+    }
+
     static public function CheckAbonnement($id_master, $id_slave){
       // Retourne vrai si l'utilisateur a déjà liké une certaine vidéo
 

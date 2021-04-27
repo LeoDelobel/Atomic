@@ -20,10 +20,10 @@
     <div class="orgapls">
 
       <div class="stat">
-        <span><p>Nombre d'abonné·e·s : </p></span>
-        <span><p>Nombre d'abonnement·s : </p></span>
-        <span><p>Nombre de vues cumulé·s : </p></span>
-        <span><p>Nombre de vidéo publié·e·s : </p></span>
+        <span><p>Nombre d'abonné·e·s : <?php echo AbonnementManager::GetAbonnes($user->id_utilisateur)?></p></span>
+        <span><p>Nombre d'abonnement·s : <?php echo AbonnementManager::GetAbonnements($user->id_utilisateur)?></p></span>
+        <span><p>Nombre de vues cumulé·s : <?php echo VuesManager::GetTotalVues($user->id_utilisateur)?></p></span>
+        <span><p>Nombre de vidéo publié·e·s : <?php echo VideoManager::GetCountByUser($user->id_utilisateur)?></p></span>
       </div>
 
       <?php

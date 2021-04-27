@@ -79,6 +79,25 @@
       return $compte["nombre"];
     }
 
+    static public function GetTotalVues($id_utilisateur){
+      // Récupère le nombre de vues d'un utilisateur
+
+      require("init_sql.php");
+
+      $statement = $DATABASE->prepare("SELECT COUNT(visionner.id_video)
+      AS nombre
+      FROM visionner
+      INNER JOIN video
+      ON video.id_video = visionner.id_video
+      INNER JOIN utilisateur
+      ON video.id_utilisateur = utilisateur.id_utilisateur
+      WHERE utilisateur.id_utilisateur = ?");
+      $statement->execute(array($id_utilisateur));
+      $compte = $statement->fetchAll()[0];
+
+      return $compte["nombre"];
+    }
+
     static public function AddVue($id_video, $id_utilisateur){
       // Ajoute une vue à une vidéo donnée
       // Vérifie la dernière vue pour éviter le spam (Limite de 1 vue par 30 secondes);
@@ -218,6 +237,20 @@
       }
 
       // On peut alors envoyer le tableau dans PrintVideos
+      return $resultat;
+    }
+
+    static public function GetCountByUser($id_utilisateur){
+      // Retourne le nombre de vidéos postées par un utilisateur
+
+      include("init_sql.php");
+
+      $statement = $DATABASE->prepare("SELECT COUNT(id_video) FROM video WHERE id_utilisateur = ?");
+      $statement->execute(array($id_utilisateur));
+
+      $resultat = $statement->fetchAll()[0][0];
+
+      // On retourne le résultat
       return $resultat;
     }
 
