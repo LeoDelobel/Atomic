@@ -29,7 +29,8 @@ if(isset($_POST["ajout"])){
       $_POST["categorie"],
       $_POST["titre"],
       $_POST["description"],
-      $img_type);
+      $img_type;
+      $vid_type);
     if($SQL["success"]){
         // Si l'ajout SQL s'est bien passé
         if($_FILES['miniature']['size'] <= (1024 * 1024 * 12)
