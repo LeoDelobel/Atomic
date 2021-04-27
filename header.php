@@ -22,8 +22,8 @@
           ?>
           <div class="selecteur">
             <div class="accueil"><a href="index.php">Accueil</a></div>
-            <div class="abonnement"><a href="abonnements.php">Abonnement</a></div>
-            <div class="titleupload"><a href="ajout_video">Téléversement</a></div>
+            <div class="abonnement"><a href="abonnements.php">Abonnements</a></div>
+            <div class="titleupload"><a href="ajout_video.php">Téléversement</a></div>
           </div>
           <?php
       }
