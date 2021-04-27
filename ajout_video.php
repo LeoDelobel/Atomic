@@ -40,7 +40,7 @@ if(isset($_POST["ajout"])){
           $path_miniature = $dir_miniatures . $SQL["id_video"] . '.' . $img_type;
           $path_video = $vid_miniatures . $SQL["id_video"] . '.' . $vid_type;
           if (move_uploaded_file($_FILES['miniature']['tmp_name'], $path_miniature)
-          && move_uploaded_file($_FILES['video']['tmp_name'], $path_video)) {
+          && move_uploaded_file($_FILES['video']['tmp_name'], $path_video )) {
             echo "La miniature a été téléchargée avec succès\n";
           } else {
             echo "Erreur de téléchargement :\n";
