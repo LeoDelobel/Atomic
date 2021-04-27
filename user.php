@@ -32,8 +32,15 @@
       ?>
       <div class="user_meta">
         <div>Mes informations</div>
-
-            <span><?php echo $user->mail ?><form action="" method="post"><input type="submit" name="change_mail" value="Modifier"></input></form></span>
+          <div class="info">
+            <?php echo $user->mail ?><form action="" method="post"><input type="submit" name="change_mail" value="Modifier"></input></form>
+          </div>
+          <div class="info">
+            <?php echo $user->pseudonyme ?><form action="" method="post"><input type="submit" name="change_mail" value="Modifier"></input></form>
+          </div>
+          <div class="info">
+            <form action="" method="post"><input type="submit" name="change_mail" value="Modifier"></input></form>
+          </div>
 
 
 
