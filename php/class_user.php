@@ -31,13 +31,30 @@
       return $compte[0]["nombre"];
     }
 
-    static public function GetAbonnements($id_master){
+    static public function GetAbonnements($id_slave){
       require("init_sql.php");
       $statement = $DATABASE->prepare("SELECT COUNT(id_master) AS nombre FROM abonner WHERE id_slave = ?");
 
-      $statement->execute(array($id_master));
+      $statement->execute(array($id_slave));
       $compte = $statement->fetchAll();
       return $compte[0]["nombre"];
+    }
+
+    static public function GetIdAbonnements($id_slave){
+      require("init_sql.php");
+      $statement = $DATABASE->prepare("SELECT id_master FROM abonner WHERE id_slave = ?");
+
+      $statement->execute(array($id_slave));
+      $liste_id = $statement->fetchAll();
+
+      $resultat = array();
+      foreach($liste_id as $id){
+        array_push($resultat, $id["id_master"]);
+      }
+      
+      return $resultat;
+
+      return $id[0];
     }
 
     static public function CheckAbonnement($id_master, $id_slave){
