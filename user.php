@@ -20,10 +20,10 @@
     <div class="orgapls">
 
       <div class="stat">
-        <span><p>Nombre d'abonné·e·s : <?php echo AbonnementManager::GetAbonnes($user->id_utilisateur)?></p></span>
-        <span><p>Nombre d'abonnement·s : <?php echo AbonnementManager::GetAbonnements($user->id_utilisateur)?></p></span>
-        <span><p>Nombre de vues cumulé·s : <?php echo VueManager::GetTotalVues($user->id_utilisateur)?></p></span>
-        <span><p>Nombre de vidéo publié·e·s : <?php echo VideoManager::GetCountByUser($user->id_utilisateur)?></p></span>
+        <span><p><?php echo AbonnementManager::GetAbonnes($user->id_utilisateur)?> abonné·e·s </p></span>
+        <span><p><?php echo AbonnementManager::GetAbonnements($user->id_utilisateur)?> abonnement·s</p></span>
+        <span><p><?php echo VueManager::GetTotalVues($user->id_utilisateur)?> vues cumulé·s </p></span>
+        <span><p><?php echo VideoManager::GetCountByUser($user->id_utilisateur)?> vidéo·s publié·e·s</p></span>
       </div>
 
       <?php
@@ -32,11 +32,11 @@
       ?>
       <div class="user_meta">
         <div>Mes informations</div>
-          <div class="conteneur">
-            <div><?php echo $user->mail ?></div>
-          <form action="" method="post">
-            <input type="submit" name="change_mail" value="Modifier"></input>
-          </form>
+
+            <span><?php echo $user->mail ?><form action="" method="post"><input type="submit" name="change_mail" value="Modifier"></input></form></span>
+
+
+
         </div>
 
 
