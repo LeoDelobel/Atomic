@@ -254,6 +254,18 @@
       return $resultat;
     }
 
+    static public function RemoveVideo($id_video){
+      // Retourne le nombre de vidéos postées par un utilisateur
+
+      include("init_sql.php");
+
+      $statement = $DATABASE->prepare("DELETE FROM video WHERE id_video = ?");
+      $statement->execute(array($id_video));
+
+      // On retourne vrai si succès
+      return $statement;
+    }
+
     static public function PrintVideos($liste){
       // Fait une liste de miniatures basée sur une liste d'objets Video
       // On commence la liste des vidéos
