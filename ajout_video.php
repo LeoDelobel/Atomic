@@ -72,6 +72,8 @@ if(isset($_POST["ajout"])){
   <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
   <p>Miniature (JPG, JPEG, GIF, PNG) :</p>
   <input name="miniature" type="file" />
+  <p>Video (MP4 de préférence) :</p>
+  <input name="video" type="file" />
 
   <input type="submit" name="ajout" value="Upload"/>
 </form>
