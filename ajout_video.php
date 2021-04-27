@@ -32,7 +32,8 @@ if(isset($_POST["ajout"])){
       $img_type);
     if($SQL["success"]){
         // Si l'ajout SQL s'est bien passé
-        if($_FILES['miniature']['size'] <= (1024 * 1024 * 12) && $_FILES['video']['size'] <= (1024 * 1024 * 64)){
+        if($_FILES['miniature']['size'] <= (1024 * 1024 * 12)
+        && $_FILES['video']['size'] <= (1024 * 1024 * 64)){
           // Si la miniature fait moins de 12Mo
           // Et la vidéo moins de 64Mo
           $path_miniature = $dir_miniatures . $SQL["id_video"] . '.' . $img_type;
@@ -71,8 +72,6 @@ if(isset($_POST["ajout"])){
   <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
   <p>Miniature (JPG, JPEG, GIF, PNG) :</p>
   <input name="miniature" type="file" />
-  <p>Video (MP4 de préférence) :</p>
-  <input name="video" type="file" />
 
   <input type="submit" name="ajout" value="Upload"/>
 </form>
