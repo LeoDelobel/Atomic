@@ -122,13 +122,13 @@
   }
 
   class VideoManager{
-    static public function AddVideo($id_utilisateur, $id_categorie, $titre, $description, $img_type){
+    static public function AddVideo($id_utilisateur, $id_categorie, $titre, $description, $img_type, $vid_type){
       // Ajoute une nouvelle vidéo dans la base de données (Ne nettoie pas les input !)
 
       require("./php/init_sql.php");
 
-      $statement = $DATABASE->prepare("INSERT INTO video(id_utilisateur, id_categorie, titre, description, img_type) VALUES(?, ?, ?, ?, ?)");
-      $statement->execute(array($id_utilisateur, $id_categorie, $titre, $description, $img_type));
+      $statement = $DATABASE->prepare("INSERT INTO video(id_utilisateur, id_categorie, titre, description, img_type, video_type) VALUES(?, ?, ?, ?, ?, ?)");
+      $statement->execute(array($id_utilisateur, $id_categorie, $titre, $description, $img_type, $vid_type));
       print_r($statement->errorInfo());
 
       $resultat = [];
