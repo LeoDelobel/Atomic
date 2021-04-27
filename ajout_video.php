@@ -14,7 +14,9 @@ require_once("php/class_video.php");
 if(isset($_POST["ajout"])){
   // Demande d'ajout de vidéo
   $dir_miniatures = "/var/www/atomic/res/miniatures/";
+  $dir_videos = "/var/www/atomic/res/videos/";
   $img_type = substr($_FILES['miniature']['type'], 6);
+  $vid_type = substr($_FILES['video']['type'], 6);
 
   if(
     $_SESSION["auth"] && // Si l'utilisateur est connecté
@@ -30,10 +32,13 @@ if(isset($_POST["ajout"])){
       $img_type);
     if($SQL["success"]){
         // Si l'ajout SQL s'est bien passé
-        if($_FILES['miniature']['size'] <= (1024 * 1024 * 12)){
-          // Si le fichier fait moins de 12Mo
+        if($_FILES['miniature']['size'] <= (1024 * 1024 * 12)
+        && $_FILES['video']['size'] <= (1024 * 1024 * 64)){
+          // Si la miniature fait moins de 12Mo
+          // Et la vidéo moins de 64Mo
           $path_miniature = $dir_miniatures . $SQL["id_video"] . '.' . $img_type;
-          if (move_uploaded_file($_FILES['miniature']['tmp_name'], $path_miniature)) {
+          $path_video = $vid_miniatures . $SQL["id_video"] . '.' . $vid_type;
+          if (move_uploaded_file($_FILES['miniature']['tmp_name'], $path_miniature) && move_uploaded_file($_FILES['video']['tmp_name'], $path_miniature)) {
             echo "La miniature a été téléchargée avec succès\n";
           } else {
             echo "Erreur de téléchargement :\n";
@@ -65,7 +70,7 @@ if(isset($_POST["ajout"])){
   </select>
 
   <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
-  <p>Miniature :</p>
+  <p>Miniature (JPG, JPEG, GIF, PNG) :</p>
   <input name="miniature" type="file" />
 
   <input type="submit" name="ajout" value="Upload"/>
