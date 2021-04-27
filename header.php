@@ -20,6 +20,11 @@
       require_once("php/class_user.php");
         if($_SESSION['auth']){
           ?>
+          <div class="selecteur">
+            <div class="accueil"><a href="index.php">Accueil</a></div>
+            <div class="abonnement"><a href="abonnements.php">Abonnement</a></div>
+            <div class="titleupload"><a href="ajout_video">Téléversement</a></div>
+          </div>
           <?php
       }
 
