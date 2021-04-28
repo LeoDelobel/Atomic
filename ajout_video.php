@@ -46,7 +46,12 @@ if(isset($_POST["ajout"])){
           } else {
             echo "Erreur de téléchargement :\n";
             print_r($_FILES);
+            // Si ca ne marche pas, on supprime la vidéo
+            VideoManager::RemoveVideo($SQL["id_video"]);
           }
+        } else {
+          // Si ca ne marche pas, on supprime la vidéo
+          VideoManager::RemoveVideo($SQL["id_video"]);
         }
       }
   }
