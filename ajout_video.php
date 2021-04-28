@@ -4,12 +4,13 @@
 # Author      : Léo Delobel
 # URL         : http://176.166.235.56/ajout_video.php
  ?>
-
+<link rel="stylesheet" href="css/style_ajout_video.css"/>
  <?php
 // On affiche le header
 require 'header.php';
 require_once("php/class_categorie.php");
 require_once("php/class_video.php");
+
 
 if(isset($_POST["ajout"])){
   // Demande d'ajout de vidéo
@@ -55,15 +56,14 @@ if(isset($_POST["ajout"])){
  if($_SESSION["auth"]){
   ?>
 
-<form enctype="multipart/form-data" action="" method="post">
-  <p>Titre :</p>
-  <input type="text" name="titre">
+<form enctype="multipart/form-data" action="" method="post" class="uploadform">
+    <h3>Téléverser une vidéo</h3>
+  <input type="text" name="titre" class="inputtext" placeholder="Titre" required>
 
-  <p>Description :</p>
-  <textarea type="text" name="description"></textarea>
 
-  <p>Catégorie :</p>
-  <select name="categorie">
+  <textarea type="text" name="description" class="inputtext" placeholder="Description" required></textarea>
+
+  <select name="categorie" class="inputtext">
     <?php
       foreach(CategorieManager::GetAll() as $c){
         echo '<option value="' . $c->id_categorie . '">' . $c->description . '</option>';
@@ -73,11 +73,11 @@ if(isset($_POST["ajout"])){
 
   <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
   <p>Miniature (JPG, JPEG, GIF, PNG) :</p>
-  <input name="miniature" type="file" />
+  <input name="miniature" type="file" class="fichier"/>
   <p>Video (MP4 de préférence) :</p>
-  <input name="video" type="file" />
+  <input name="video" type="file" class="fichier"/>
 
-  <input type="submit" name="ajout" value="Upload"/>
+  <input type="submit" name="ajout" value="Upload" class="televerser"/>
 </form>
 
   <?php

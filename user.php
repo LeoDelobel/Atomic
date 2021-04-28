@@ -33,25 +33,14 @@
       <div class="user_meta">
         <div>Mes informations</div>
           <div class="info">
-            <?php echo $user->mail ?><form action="" method="post"><input type="submit" name="change_mail" value="Modifier"></input></form>
+            <?php echo $user->mail ?><form action="" method="post"><input type="submit" name="change_mail" value="Modifier" class="button1"></input></form>
           </div>
           <div class="info">
-            <?php echo $user->pseudonyme ?><form action="" method="post"><input type="submit" name="change_mail" value="Modifier"></input></form>
+            <?php echo $user->pseudonyme ?><form action="" method="post"><input type="submit" name="change_mail" value="Modifier" class="button1"></input></form>
           </div>
           <div class="info">
-            <form action="" method="post"><input type="submit" name="change_mail" value="Modifier"></input></form>
+            <form action="" method="post"><input type="submit" name="change_mail" value="Changer mot de passe"></input></form>
           </div>
-
-
-
-        </div>
-
-
-        <div class="conteneur">
-          <form action="" method="post">
-            <input type="submit" name="change_pass" value="Modifier"></input>
-          </form>
-        </div>
 
           <form class="helo" action="php/disconnect.php" method="POST"><button class="button">Changer de compte</button></form>
         </div>
