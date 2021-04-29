@@ -26,12 +26,12 @@
       <?php
       if(isset($_POST["like"]))
       {
-        AddLike($_SESSION["id_utilisateur"],$video->id_video);
+        LikeManager::AddLike($_SESSION["id_utilisateur"],$video->id_video);
         header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
       }
       if(isset($_POST["unlike"]))
       {
-        RemoveLike($_SESSION["id_utilisateur"],$video->id_video);
+        LikeManager::RemoveLike($_SESSION["id_utilisateur"],$video->id_video);
         header('Location: ./watch.php?id_video=' . $_GET["id_video"]);
       }
       if(isset($_POST["commenter"]))
